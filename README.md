@@ -1,5 +1,4 @@
 # DAM1
->>>>>>> 25167a9 (Prueba git con pull)
 Ver estado:  git status  
 Bajar cambios:  git pull  
 Marcar archivos:  git add .  
