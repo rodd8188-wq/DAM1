@@ -11,3 +11,5 @@ Limpiar/Descartar:  `git restore .`
 `git add .`
 `git commit -m "descripcion"`
 `git push`
+> Bajar archivos
+`git pull`
