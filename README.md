@@ -10,6 +10,6 @@ Limpiar/Descartar:  `git restore .`
 `git status`
 `git add .`
 `git commit -m "descripcion"`
-`git push`
+`git push`  
 > Bajar archivos
 `git pull`
