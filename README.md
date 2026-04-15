@@ -12,4 +12,6 @@ Limpiar/Descartar:  `git restore .`
 `git commit -m "descripcion"`
 `git push`  
 > Bajar archivos
-`git pull`
+`git pull`  
+> Declara como trabajar
+`git config pull.rebase false`
