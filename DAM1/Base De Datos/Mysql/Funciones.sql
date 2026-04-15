@@ -62,3 +62,8 @@ GROUP BY store_id;
 SELECT * FROM rental;
 SELECT inventory_id,COUNT(rental_id) FROM rental GROUP BY inventory_id;
 
+DELIMITER ;;
+CREATE TRIGGER `ins_film` AFTER INSERT ON `film` FOR EACH ROW BEGIN
+	INSERT INTO film_text (film_id, title, description)
+		VALUES (new.film_id, new.title, new.description);
+	END;;
