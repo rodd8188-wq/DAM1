@@ -35,9 +35,7 @@ import java.util.regex.Matcher;
 public class EjerciciosD {
 
 	public static void main(String[] args) {
-		
-		//Hola
-		
+	
 		///Escribir un número y decir si es par o impar.
 		/*
 		Scanner teclado = new Scanner(System.in);
