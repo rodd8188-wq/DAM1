@@ -1,12 +1,7 @@
 # DAM1
-Ver estado: &nbsp; git status
-Bajar cambios:
-git pull
-Marcar archivos:
-git add .
-Guardar versión:
-git commit -m "descripcion"
-Subir a la nube:
-git push
-Limpiar/Descartar:
-git restore .
+Ver estado: &nbsp;&nbsp; git status  
+Bajar cambios: &nbsp;&nbsp; git pull  
+Marcar archivos: &nbsp;&nbsp; git add .  
+Guardar versión: &nbsp;&nbsp; git commit -m "descripcion"  
+Subir a la nube: &nbsp;&nbsp; git push  
+Limpiar/Descartar: &nbsp;&nbsp; git restore .  
