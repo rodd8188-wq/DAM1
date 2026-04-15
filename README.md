@@ -1,5 +1,5 @@
 # DAM1
-Ver estado	        git status\n
+Ver estado	        git status
 Bajar cambios	      git pull
 Marcar archivos	    git add .
 Guardar versión	    git commit -m "descripcion"
