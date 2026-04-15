@@ -1,0 +1,21 @@
+package ExamenAutoescuela;
+
+import java.util.ArrayList;
+
+public class Examen {
+	private int puntuacion;
+	ArrayList<Preguntas> listaPreguntas = new ArrayList<>();
+	public Examen(int numPreguntas, ArrayList<Preguntas> listaPreguntas) {
+	}
+	public void anyadePregunta(Preguntas p) {
+		this.listaPreguntas.add(p);
+	}
+	public void mostrarPreguntas() {
+		String pre="";
+		for(int i=0;i<listaPreguntas.size();i++)
+			System.out.println(listaPreguntas.get(i));
+	}
+	public ArrayList<Preguntas> listarPreguntas(){
+		return listaPreguntas;
+	}
+}

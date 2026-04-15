@@ -1,0 +1,51 @@
+package Boletin23Daniel;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class D_Ejercicio11 {
+
+	public static void main(String[] args) {
+		
+		boolean ficheroAccesible=true;
+		HashMap<String, String> usuarios = new HashMap<>();
+		try {
+			ArrayList<String> lineas;
+			Path fichero = Path.of("/home/alumno/A/ficheros/login");
+			lineas = (ArrayList<String>) Files.readAllLines(fichero);
+			for(String linea: lineas) {
+				String[] user = linea.split(":");
+				usuarios.put(user[0],user[1]);
+			}
+		} catch(Exception e) {
+			System.out.println("Fichero inexistente o imposible acceder a él");
+			ficheroAccesible=false;
+		}
+		if(ficheroAccesible==true) {
+			if(usuarios.size()==0)
+				System.out.println("Fichero vacío");
+			else {
+				Scanner teclado = new Scanner(System.in);
+				System.out.print("Usuario: ");
+				String usuario = teclado.nextLine();
+				if(usuarios.containsKey(usuario)==false)
+					System.out.println("Usuario no encontrado");
+				else {
+					System.out.print("Contraseña: ");
+					String contrasenya = teclado.nextLine();
+					teclado.close();
+					if(contrasenya.equals(usuarios.get(usuario))==false)
+						System.out.println("Contraseña incorrecta");
+					else
+						System.out.println("Login");
+				}
+			}
+		}
+		
+		
+	}
+
+}

@@ -1,0 +1,157 @@
+body{
+    background-color: #b0bcc6;
+    font-family: 'Roboto', 'sans-serif';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+}
+.cuadro{
+    width: 30%;
+    border-radius: 20px;
+    background-color: #011221;
+    margin: 15px;
+    box-shadow: 0px 0px 10px black;
+}
+.unete{
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 20px
+}
+.contenido{
+    background-color: white;
+    margin-top: 25px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: 580px;
+}
+.formulario{
+    margin-bottom: 20px;
+    text-align: center;
+}
+.formulario > h2{
+    margin-bottom: 1px
+}
+.formulario > p{
+    color: rgb(96, 96, 96);
+}
+input{
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: gray;
+}
+select{
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: gray;
+}
+.nombreProducto{
+    display: grid;
+}
+.nombreProducto > label{
+    margin-left: 39px;
+    font-size: 16px;
+}
+.nombreProducto > input{
+    height: 30px;
+    margin-left: 40px;
+    margin-top: 8px;
+    width: 80%;
+}
+.valoracion{
+    display: grid;
+}
+.valoracion > label{
+    margin-top: 10px;
+    margin-left: 39px;
+    font-size: 16px;
+}
+.valoracion > select{
+    height: 34px;
+    margin-left: 40px;
+    margin-top: 8px;
+    width: 81%;
+}
+.correo{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: grid;
+    height: 95px;
+    border-radius: 10px;
+    background-color: #011221;
+    width: 384px;
+    margin-left: 39px
+}
+.correo > label{
+    margin-top: 13px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    color: white;
+    font-size: 18px;
+}
+.correo > input{
+    margin-left: 20px;
+    margin-bottom: 20px;
+    height: 37px;
+    width: 88%;
+    border-radius: 8px;
+    border-color: gray;
+}
+.comentario{
+    display: grid;
+}
+.comentario > label{
+    margin-top: 10px;
+    margin-left: 40px;
+    font-size: 16px;
+}
+.comentario > textarea{
+    height: 60px;
+    margin-left: 40px;
+    margin-top: 8px;
+    width: 81%;
+    border-radius: 6px;
+    border-color: gray;
+}
+.recomendacion{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: end;
+    margin-right: 43px;
+}
+.recomendacion > span{
+    margin-right: 187px;
+}
+.resenya{
+    text-align: center;
+}
+.resenya > button{
+    width: 192px;
+    height: 43px;
+    border-radius: 7px;
+    border: 0px solid;
+    color: white;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+.enviarResenya{
+    background-color: #007ACC;
+}
+.cancelarResenya{
+    background-color: rgb(145, 145, 145);
+}
+.enviarResenya:hover{
+    background-color: #015e9c;
+}
+.cancelarResenya:hover{
+    background-color: rgb(97, 97, 97);
+}
+input[type="email"]:valid {
+  border-color: #2ecc71;
+}
+
+/* Formato incorrecto */
+input[type="email"]:invalid:not(:placeholder-shown) {
+  border-color: #e74c3c;
+}

@@ -1,0 +1,35 @@
+package ExamenAutoescuela;
+
+import java.util.ArrayList;
+
+public class Examen {
+	private int puntuacion;
+	private int numPreguntas;
+	static ArrayList<Preguntas> listaPreguntas = new ArrayList<>();
+	public Examen(int numPreguntas, ArrayList<Preguntas> listaPreguntas) {
+		this.numPreguntas=numPreguntas;
+		this.listaPreguntas=listaPreguntas;
+	}
+	public void mostrarTodasPreguntas() {
+		String pre="";
+		for(int i=0;i<this.listaPreguntas.size();i++)
+			System.out.println(this.listaPreguntas.get(i).getPregunta());
+	}
+	public void montarExamen() {
+		int posArray;
+		ArrayList<Integer> yaSalido = new ArrayList<>();
+		for(int i=0;i<this.numPreguntas;i++) {
+			boolean repetido=false;
+			do {
+				posArray = (int)(Math.random()*Preguntas.getListaPreguntas().size()-1)+0;
+				System.out.println(posArray);
+				this.listaPreguntas.add(Preguntas.listaTodasPreguntas.get(posArray));	
+				for(int o=0;o<yaSalido.size();o++)
+					if(posArray==yaSalido.get(o)) {
+						repetido=true;
+					}
+				System.out.println(this.listaPreguntas.get(i).getPregunta());
+			} while (repetido==true);
+		}
+	}
+}

@@ -1,0 +1,22 @@
+package EjercicioLogin;
+
+public class Login {
+
+	public static void main(String[] arGs) {
+		
+		String user = "Daniel";
+		String password = "abc123";
+		
+		// Generar SALT
+		
+		
+	}
+	
+	public static String generarSalt() {
+		String hash = "";
+		
+		
+		return hash;
+	}
+
+}

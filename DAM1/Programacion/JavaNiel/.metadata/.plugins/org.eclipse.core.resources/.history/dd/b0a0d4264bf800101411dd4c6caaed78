@@ -1,0 +1,14 @@
+package ExamenAutoescuela;
+
+public class ExamenPool {
+	public static void main(String[] args) {
+		
+		Examen ex1 = new Examen();
+		
+		Preguntas p1 = new Preguntas(ex1,"¿Qué indica una línea continua en el centro de la calzada?","Que no se puede adelantar ni cambiar de carril","Que se puede adelantar con precaución","Que solo pueden adelantar las motos","Que está permitido adelantar de día","Que la vía es de doble sentido","Que se puede adelantar si no viene nadie");	
+		Preguntas p2 = new Preguntas(ex1,"","","","","","","");
+		Preguntas p3 = new Preguntas(ex1,"","","","","","","");
+		
+		ex1.mostrarPreguntas();
+	}
+}

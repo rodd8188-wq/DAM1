@@ -1,0 +1,16 @@
+package ExamenAutoescuela;
+
+public class ExamenPool {
+	public static void main(String[] args) {
+		
+		Preguntas p1 = new Preguntas("¿Qué indica una línea continua en el centro de la calzada?","Que no se puede adelantar ni cambiar de carril","Que se puede adelantar con precaución","Que solo pueden adelantar las motos","Que está permitido adelantar de día","Que la vía es de doble sentido","Que se puede adelantar si no viene nadie");	
+		Preguntas p2 = new Preguntas("¿Cuál es la velocidad máxima en autopista para turismos (en condiciones normales)?","120 km/h","100 km/h","130 km/h","140","80 km/h","90 km/h");
+		Preguntas p3 = new Preguntas("¿Cuándo es obligatorio usar el cinturón de seguridad?","Siempre que el vehículo esté en marcha","Solo de noche","Solo en autopista","Solo para el conductor","Solo en ciudad","Solo en carretera");
+		
+		Examen ex1 = new Examen(3,Preguntas.listaPreguntasExamen);
+		
+		ex1.mostrarTodasPreguntas();
+		ex1.montarExamen();
+		ex1.mostrarPreguntasExamen();
+	}
+}

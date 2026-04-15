@@ -1,0 +1,21 @@
+package CentroMedico;
+
+public class Consulta {
+	protected Paciente paciente;
+	protected Medico medico;
+	protected String fecha;
+	protected String motivoConsulta;
+	protected String consejoMedico;
+	public Consulta(Paciente pac,Medico med,String fecha,String motivo,String consejo) {
+		paciente=pac;
+		medico=med;
+		this.fecha=fecha;
+		motivoConsulta=motivo;
+		consejoMedico=consejo;
+		this.paciente.anyadeConsulta(this);
+		this.medico.anyadeConsulta(this);
+	}
+	public String getConsejoMedico() {
+		return consejoMedico;
+	}
+}

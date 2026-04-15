@@ -1,0 +1,56 @@
+package Default;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class BaseDeDatos1 {
+
+	public static void main(String[] args) {
+		
+		String usuario = "admin";
+		String password = "1234";
+		String server = "jdbc:mysql://localhost:3306/sakila";
+		
+		try(Connection conexion = DriverManager.getConnection(server, usuario, password)) {
+			System.out.println("Conexión realizada con éxito");
+			
+			//Se puede reutilizar todas las veces que quieras
+			Statement query = conexion.createStatement();
+			
+			//Realizar una consulta
+			//El ResultSet por defecto solo puede ir hacia delante
+			String consulta = "SELECT first_name, last_name, actor_id FROM actor WHERE actor_id <= 100";
+			ResultSet resultado = query.executeQuery(consulta);
+			
+			//Recorrer la consulta
+			while(resultado.next()) {
+				//Dentro del get puede referenciarse al nombre de la columna o a la poscición de esta en la consulta (query).
+				System.out.printf("Fila %d - Actor %d: %s %s\n", resultado.getRow(), resultado.getInt(3), resultado.getString("first_name"), resultado.getString("last_name"));
+			}
+			//Mueve el puntero a la siguiente
+			resultado.next();
+			//Mueve el puntero a la anterior
+			resultado.previous();
+			//Mueve el puntero al primero
+			resultado.first();
+			//Mueve el puntero al último
+			resultado.last();
+			//Devuelve el número de la fila en la que se encuentra el puntero
+			resultado.getRow();
+			//Mueve el puntero antes del primero
+			resultado.beforeFirst();
+			//Mueve el puntero despues del último
+			resultado.afterLast();
+			
+			
+			///conexion.close();
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		
+	}
+
+}

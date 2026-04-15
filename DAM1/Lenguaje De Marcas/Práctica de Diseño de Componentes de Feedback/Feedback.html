@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Reseña</title> 
+<link rel="stylesheet" href="Feedback.css">
+</head>
+<body>
+    <div class="cuadro">
+        <div class="unete">
+            <b>¡Únete a nuestra comunidad!</b>
+        </div>
+        <div class="contenido">
+            <div class="formulario">
+                <br>
+                <h2>Formulario de Reseña de producto</h2>
+                <p>Eutod et auitilacto ex de comunida de pistro de lesidos.</p>
+            </div>
+            <form>
+                <div class="nombreProducto">
+                    <label>Nombre del Producto</label>
+                    <input type="text" placeholder="Nombre del Producto" required>
+                </div>
+                <div class="valoracion">
+                    <label>Valoración</label>
+                    <select required>
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option>Horrible</option>
+                        <option>Malardo</option>
+                        <option>Ni malo ni bueno</option>
+                        <option>Bueno</option>
+                        <option>Hermoso</option>
+                    </select>
+                </div>
+                <div class="comentario">
+                    <label>Comentario</label>
+                    <textarea></textarea>
+                </div>
+                <div class="recomendacion">
+                    <span>Recomendación</span>
+                    <label style="display:inline;"><input type="radio" name="rec" value="si"> Sí </label>
+                    <label style="display:inline;"><input type="radio" name="rec" value="no"> No </label>
+                </div>
+                <div class="correo">
+                    <label>Correo Electrónico</label>
+                    <input type="email" placeholder="nombre@email.com" id="email" name="email" required>
+                </div>
+                <div class="resenya">
+                    <button type="submit" class="enviarResenya"><b>Enviar Reseña</b></button>
+                    <button type="button" class="cancelarResenya"><b>Cancelar</b></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

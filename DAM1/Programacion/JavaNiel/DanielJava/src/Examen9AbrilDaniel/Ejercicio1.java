@@ -1,0 +1,96 @@
+package Examen9AbrilDaniel;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map.Entry;
+
+public class Ejercicio1 {
+
+	public static void main(String[] args) {
+		
+		mostrarPersonajesEnAnimes();
+		
+		
+	}
+	
+	public static void mostrarPersonajesEnAnimes() {
+		HashMap<String,String> animes = leerFicheroAnimes();
+		HashMap<String,String> personajes = leerFicheroPersonajes();
+		for(Entry<String, String> anime : animes.entrySet()) {
+			System.out.println(anime.getKey());
+			boolean encontrado = false;
+			for(Entry<String, String> personaje : personajes.entrySet()) {
+				if(anime.getValue().equals(personaje.getValue())) {
+					System.out.println("- " + personaje.getKey());
+					encontrado = true;
+				}
+			}
+			if(encontrado == false)
+				System.out.println("- No hay personajes");
+			System.out.println();
+		}
+		System.out.println("Personajes sin anime");
+		for(Entry<String, String> personaje : personajes.entrySet()) {
+			boolean encontrado = false;
+			for(Entry<String, String> anime : animes.entrySet()) {
+				if(personaje.getValue().equals(anime.getValue())) {
+					encontrado = true;
+				}
+			}
+			if(encontrado == false)
+				System.out.println("- " + personaje.getKey());
+		}
+	}
+	
+	public static HashMap<String,String> leerFicheroAnimes(){
+		HashMap<String,String> animes = new HashMap<>();
+		try {
+			ArrayList<String> lineas;
+			Path fichero = Path.of("/home/alumno/A/ficheros/animes.txt");
+			lineas = (ArrayList<String>) Files.readAllLines(fichero);
+			for(String linea : lineas) {
+				String[] datos = linea.split(" ");
+				String nombreAnime = datos[1];
+				if(datos.length>=3) {
+					for(int i=2;i<datos.length;i++) {
+						nombreAnime+=" "+datos[i];
+					}
+				}
+				animes.put(nombreAnime, datos[0]);
+			}
+			
+		} catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		return animes;
+	}
+	
+	public static HashMap<String,String> leerFicheroPersonajes(){
+		HashMap<String,String> animes = new HashMap<>();
+		try {
+			ArrayList<String> lineas;
+			Path fichero = Path.of("/home/alumno/A/ficheros/personajes.txt");
+			lineas = (ArrayList<String>) Files.readAllLines(fichero);
+			for(String linea : lineas) {
+				String[] datos = linea.split(" ");
+				String nombre = datos[1];
+				if(datos.length>=3) {
+					for(int i=2;i<datos.length;i++) {
+						nombre+=" "+datos[i];
+					}
+				}
+				animes.put(nombre, datos[0]);
+			}
+			
+		} catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		return animes;
+	}
+	
+
+}

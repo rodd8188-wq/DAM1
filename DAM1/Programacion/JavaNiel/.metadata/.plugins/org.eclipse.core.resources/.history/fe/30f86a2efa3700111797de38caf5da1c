@@ -1,0 +1,19 @@
+package EjercicioLogin;
+
+import java.security.SecureRandom;
+
+public class Login {
+
+	public static void main(String[] arGs) {
+		
+		String user = "Daniel";
+		String password = "abc123";
+		
+		// Generar SALT
+		
+		SecureRandom azar = new SecureRandom();
+		byte[] salt = new byte[16];
+		azar.nextBytes(salt);
+	}
+
+}

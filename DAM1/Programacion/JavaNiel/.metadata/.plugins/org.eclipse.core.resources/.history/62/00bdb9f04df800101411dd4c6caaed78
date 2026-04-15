@@ -1,0 +1,9 @@
+package ExamenAutoescuela;
+
+import java.util.ArrayList;
+
+public class Examen {
+	private int puntuacion;
+	public Examen(int numPreguntas, ArrayList<Preguntas> listaPreguntas) {
+	}
+}

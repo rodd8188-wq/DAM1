@@ -1,0 +1,32 @@
+package ExamenAutoescuela;
+
+import java.util.ArrayList;
+
+public class Preguntas {
+	private String pregunta;
+	private String respuestaCorrecta;
+	private String respuesta2;
+	private String respuesta3;
+	private String respuesta4;
+	private String respuesta5;
+	private String respuesta6;
+	static ArrayList<Preguntas> listaPreguntas = new ArrayList<>();
+	public Preguntas(String pregunta, String res1, String res2, String res3, String res4, String res5, String res6){
+		this.pregunta=pregunta;
+		respuestaCorrecta=res1;
+		respuesta2=res2;
+		respuesta3=res3;
+		respuesta4=res4;
+		respuesta5=res5;
+		respuesta6=res6;
+		this.listaPreguntas.add(this);
+	}
+	public static ArrayList<Preguntas> getListaPreguntas(){
+		return listaPreguntas;
+	}
+	public void mostrarPreguntas() {
+		String pre="";
+		for(int i=0;i<=listaPreguntas.size();i++)
+			System.out.println(listaPreguntas.get(i).pregunta);
+	}
+}
