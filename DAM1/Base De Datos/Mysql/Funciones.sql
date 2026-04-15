@@ -12,7 +12,9 @@ BEGIN
 END //
 DELIMITER ;
 
-CALL sakila.saludo()
+CALL sakila.saludo();
+
+DROP PROCEDURE buscar_actor;
 
 DELIMITER //
 CREATE PROCEDURE buscar_actor(IN p_apellido VARCHAR(50))
@@ -24,14 +26,18 @@ DELIMITER ;
 
 CALL buscar_actor('Jackman');
 
+DROP PROCEDURE contar_peliculas;
+
 DELIMITER //
 CREATE PROCEDURE contar_peliculas(OUT p_total INT)
 BEGIN
 	SELECT COUNT(*) INTO p_total FROM film;
 END //
 DELIMITER ;
-
+-- Esta mal contar_peliculas (Da error en la llamada)
 CALL contar_peliculas();
+
+DROP PROCEDURE calcular_iva;
 
 DELIMITER //
 CREATE FUNCTION calcular_iva(p_precio DECIMAL(10,2))
@@ -67,3 +73,29 @@ CREATE TRIGGER `ins_film` AFTER INSERT ON `film` FOR EACH ROW BEGIN
 	INSERT INTO film_text (film_id, title, description)
 		VALUES (new.film_id, new.title, new.description);
 	END;;
+
+DELIMITER //
+CREATE PROCEDURE alquiler_rapido (
+	IN var_customer_id INT,
+    IN var_inventory_id INT,
+    IN var_staff_id INT)
+BEGIN
+	INSERT INTO `sakila`.`rental`
+		(`rental_date`,
+        `inventory_id`,
+        `customer_id`,
+        `staff_id`)
+	VALUES
+		 (NOW(),
+         var_inventory_id,
+         var_customer_id,
+         var_staff_id);
+END //
+DELIMITER ;
+
+SELECT * FROM inventory;
+CALL `ej1_alquiler_rapido`(
+ -- customer_id, inventory_id, staff_id
+	67,46,1
+);
+SELECT * FROM rental WHERE customer_id = 67 AND inventory_id = 46 AND staff_id = 1;
