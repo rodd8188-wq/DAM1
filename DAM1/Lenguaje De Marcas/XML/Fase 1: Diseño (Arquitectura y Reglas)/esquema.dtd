@@ -1,0 +1,31 @@
+<!ELEMENT biblioteca (catalogo, inventario, usuarios)>
+<!ATTLIST biblioteca 
+          nombre CDATA #REQUIRED
+          sede CDATA #IMPLIED>
+
+<!ELEMENT catalogo (libro*)>
+<!ELEMENT libro (titulo, autor+, anyo?)>
+<!ATTLIST libro
+          isbn ID #REQUIRED
+          categoria (ficcion | no-ficcion | infantil | tecnico) "ficcion">
+
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT autor (#PCDATA)>
+<!ELEMENT anio (#PCDATA)>
+
+<!ELEMENT inventario (ejemplar*)>
+<!ELEMENT ejemplar (estanteria)>
+<!ATTLIST ejemplar
+          codigo ID #REQUIRED
+          ref_libro IDREF #REQUIRED
+          estado (nuevo | bueno | gastado) "bueno">
+
+<!ELEMENT estanteria (#PCDATA)>
+
+<!ELEMENT usuarios (socio*)>
+<!ELEMENT socio (nombre_completo)>
+<!ATTLIST socio
+          dni ID #REQUIRED
+          nivel (basico | premium | infantil) #REQUIRED>
+
+<!ELEMENT nombre_completo (#PCDATA)>
