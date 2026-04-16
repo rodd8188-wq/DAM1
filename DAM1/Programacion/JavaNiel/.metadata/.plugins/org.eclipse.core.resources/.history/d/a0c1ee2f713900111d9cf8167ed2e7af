@@ -35,7 +35,7 @@ public class Login {
 			byte[] hash = digest.digest(txt.getBytes(StandardCharsets.UTF_8));
 			hashTxt = Base64.getEncoder().encodeToString(hash);
 		} catch (Exception e) {
-			System.out.println("El algoritmo SHA-512 no está disponible");
+			System.out.println(e.getMessage());
 		}
 		return hashTxt;
 	}

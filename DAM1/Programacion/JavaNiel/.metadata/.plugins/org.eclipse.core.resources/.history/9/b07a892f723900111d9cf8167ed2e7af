@@ -25,8 +25,8 @@ public class BaseDeDatos1 {
 			///Statement query = conexion.createStatement();
 			
 			//Realizar una consulta
-			String consulta = "SELECT * FROM actor WHERE first_name = 'MARY'";
-			ResultSet resultado = query.executeQuery(consulta);
+			///String consulta = "SELECT * FROM actor WHERE first_name = 'MARY'";
+			///ResultSet resultado = query.executeQuery(consulta);
 			
 			//Modificar un registro en concreto (Update)
 			///resultado.absolute(67);

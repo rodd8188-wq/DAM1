@@ -1,0 +1,32 @@
+package EjercicioLogin;
+
+import java.security.SecureRandom;
+import java.util.Base64;
+
+public class Login {
+
+	public static void main(String[] args) {
+		
+		String user = "Daniel";
+		String password = "abc123";
+		
+		// Generar SALT
+		String hash = generarHash(generarSalt() + password);
+		
+	}
+	
+	public static String generarSalt() {
+		SecureRandom azar = new SecureRandom();
+		byte[] salt = new byte[16];
+		azar.nextBytes(salt);
+		
+		String cadenaSalt = Base64.getEncoder().encodeToString(salt);
+		
+		return cadenaSalt;
+	}
+	
+	public static String genenarHash(String arg) {
+		
+	}
+	
+}

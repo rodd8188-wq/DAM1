@@ -1,0 +1,37 @@
+package Default;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class BaseDeDatos2 {
+	public static void main(String[] args) {
+		
+		String usuario = "admin";
+		String password = "1234";
+		String server = "jdbc:mysql://localhost:3306/sakila";
+		
+		try(Connection conexion = DriverManager.getConnection(server, usuario, password)) {
+			System.out.println("Conexión realizada con éxito");
+			PreparedStatement query = conexion.prepareStatement("INSERT INTO actor VALUES (NULL, ?, ?, ?)");
+			
+			query.setString(1, "Daniel");	//first_name
+			query.setString(2, "Rodriguez");	//last_name
+			//Generar la fecha actual en el formato que se necesita en la base
+			LocalDateTime fechaHora = LocalDateTime.now();
+			DateTimeFormatter formato = DateTimeFormatter.ofPattern("YYYY-MM-dd HH:mm:ss");
+			String fechaFormateada = fechaHora.format(formato);
+			query.setString(3, fechaFormateada);	//last_update
+			//Ejecutar los cambios
+			query.executeUpdate();
+			
+			
+			
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+}

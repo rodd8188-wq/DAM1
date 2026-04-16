@@ -11,9 +11,9 @@ public class Login {
 		
 		String user = "Daniel";
 		String password = "abc123";
-		
 		String salt = generarSalt();
 		
+		// Generar SALT
 		String hash = generarHash(salt + password);
 		
 	}
@@ -28,16 +28,15 @@ public class Login {
 		return cadenaSalt;
 	}
 	
-	public static String generarHash(String txt) {
-		String hashTxt = null;
+	public static String genenarHash(String txt) {
 		try {
 			MessageDigest digest = MessageDigest.getInstance("SHA-512");
 			byte[] hash = digest.digest(txt.getBytes(StandardCharsets.UTF_8));
-			hashTxt = Base64.getEncoder().encodeToString(hash);
+			return Base64.getEncoder().encodeToString(hash);
 		} catch (Exception e) {
-			System.out.println("El algoritmo SHA-512 no está disponible");
+			System.out.println(e.getMessage());
 		}
-		return hashTxt;
+		
 	}
 	
 }

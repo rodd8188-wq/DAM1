@@ -1,0 +1,24 @@
+package Default;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class BaseDeDatos2 {
+	public static void main(String[] args) {
+		
+		String usuario = "admin";
+		String password = "1234";
+		String server = "jdbc:mysql://localhost:3306/sakila";
+		
+		try(Connection conexion = DriverManager.getConnection(server, usuario, password)) {
+			System.out.println("Conexión realizada con éxito");
+			
+			
+			
+			
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+}

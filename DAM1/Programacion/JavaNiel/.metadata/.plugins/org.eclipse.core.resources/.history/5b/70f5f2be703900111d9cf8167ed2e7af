@@ -1,0 +1,41 @@
+package EjercicioLogin;
+
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.SecureRandom;
+import java.util.Base64;
+
+public class Login {
+
+	public static void main(String[] args) {
+		
+		try {
+			String user = "Daniel";
+			String password = "abc123";
+			
+			// Generar SALT
+			String hash = generarHash(generarSalt() + password);
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+	}
+	
+	public static String generarSalt() {
+		SecureRandom azar = new SecureRandom();
+		byte[] salt = new byte[16];
+		azar.nextBytes(salt);
+		
+		String cadenaSalt = Base64.getEncoder().encodeToString(salt);
+		
+		return cadenaSalt;
+	}
+	
+	public static String genenarHash(String arg) throws Exception {
+		MessageDigest digest = MessageDigest.getInstance("SHA-512");
+		byte[] hash = digest.digest(arg.getBytes(StandardCharsets.UTF_8));
+		return Base64.getEncoder().encodeToString(hash);
+	}
+	
+}
