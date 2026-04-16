@@ -42,11 +42,6 @@ public class BaseDeDatos1 {
 			///query.setString(2, "Keitel");
 			///ResultSet resultado = query.executeQuery();
 			
-			//Si devuelve resultados utilizamos:
-			///query.executeQuery();
-			//Si no devuelve resultados utilizamos:
-			///query.executeUpdate();
-			
 			//Recorrer la consulta
 			resultado.afterLast();
 			while(resultado.previous()) {

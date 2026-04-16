@@ -13,7 +13,7 @@ public class BaseDeDatos2 {
 		
 		String usuario = "admin";
 		String password = "1234";
-		String server = "jdbc:mysql://localhost:3306/";
+		String server = "jdbc:mysql://localhost:3306/sakila";
 		
 		try(Connection conexion = DriverManager.getConnection(server, usuario, password)) {
 			System.out.println("Conexión realizada con éxito");
@@ -36,14 +36,14 @@ public class BaseDeDatos2 {
 				//Query de creación de base de datos
 				//
 			//Crear los query
-			///String query1 = "CREATE DATABASE IF NOT EXISTS agenda";
-			///String query2 = "USE agenda";
-			///String query3 = "CREATE TABLE IF NOT EXISTS contactos (telefono INT(9) PRIMARY KEY, nombre VARCHAR(50))";
+			String query1 = "CREATE DATABASE IF NOT EXISTS agenda";
+			String query2 = "USE agenda";
+			String query3 = "CREATE TABLE IF NOT EXISTS(telefono INT(9) PRIMARY KEY, nombre VARCHAR(50))";
 			//Ejecutar los query
-			///Statement consulta = conexion.createStatement();
-			///consulta.executeUpdate(query1);
-			///consulta.executeUpdate(query2);
-			///consulta.executeUpdate(query3);
+			Statement query = conexion.createStatement();
+			query.executeQuery(query1);
+			query.executeQuery(query2);
+			query.executeQuery(query3);
 			
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
