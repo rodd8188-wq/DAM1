@@ -1,0 +1,76 @@
+package EjercicioLogin;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class Login {
+	
+	static String
+	usuario = "admin",
+	password = "1234",
+	server = "jdbc:mysql://localhost:3306/agenda";
+	
+	public static void login() {
+		try {
+			System.out.print("Usuario: ");
+			Scanner tcl = new Scanner(System.in);
+			String user = tcl.nextLine();
+			if(comprobarElSiUsuarioExiste(user) == false) {
+				System.out.println("Nombre de usuario no encontrado");
+			} else {
+				boolean validPassword = true;
+				do {
+					System.out.print("Contraseña: ");
+					String password = tcl.nextLine();
+					comprobarPassword(password, user);
+				} while(validPassword == false);
+				
+			}
+			
+			
+		} catch (Exception e) {
+			
+		}
+		
+	}
+	
+	public static boolean comprobarPassword(String password, String user) {
+		boolean validPassword = false;
+		try(Connection conexion = DriverManager.getConnection(Login.server, Login.usuario, Login.password)) {
+			PreparedStatement query = conexion.prepareStatement("SELECT salt, hash FROM usuarios WHERE nombre = ?",ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			query.setString(1, user);
+			ResultSet resultado = query.executeQuery();
+			resultado.beforeFirst();
+			System.out.println(resultado.getString(1) +" "+ resultado.getString(2));
+			System.out.println("hola5");
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return validPassword;
+	}
+	
+	public static boolean comprobarElSiUsuarioExiste(String nombre) {
+		boolean existe = false;
+		try(Connection conexion = DriverManager.getConnection(Login.server, Login.usuario, Login.password)) {
+			Statement query = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			String consulta = "SELECT * FROM usuarios";
+			ResultSet resultado = query.executeQuery(consulta);
+			//Recorrer la base
+			resultado.beforeFirst();
+			while(resultado.next() || existe == true) {
+				if(nombre.equalsIgnoreCase(resultado.getString("nombre")))
+					existe = true;
+			}
+		} catch (SQLException e) {
+			
+		}
+		return existe;
+	}
+	
+}

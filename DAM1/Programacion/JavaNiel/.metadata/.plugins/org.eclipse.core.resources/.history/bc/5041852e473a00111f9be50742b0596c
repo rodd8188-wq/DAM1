@@ -1,0 +1,15 @@
+package EjercicioLogin;
+
+public class Login {
+	
+	static String
+	usuario = "admin",
+	password = "1234",
+	server = "jdbc:mysql://localhost:3306/agenda";
+	
+	public static void login() {
+		
+	}
+	
+	
+}

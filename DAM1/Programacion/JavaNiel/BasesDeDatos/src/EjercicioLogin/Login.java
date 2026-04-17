@@ -1,43 +1,75 @@
 package EjercicioLogin;
 
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.SecureRandom;
-import java.util.Base64;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
 
 public class Login {
-
-	public static void main(String[] args) {
-		
-		String user = "Daniel";
-		String password = "abc123";
-		
-		String salt = generarSalt();
-		
-		String hash = generarHash(salt + password);
-		
-	}
 	
-	public static String generarSalt() {
-		SecureRandom azar = new SecureRandom();
-		byte[] salt = new byte[16];
-		azar.nextBytes(salt);
-		
-		String cadenaSalt = Base64.getEncoder().encodeToString(salt);
-		
-		return cadenaSalt;
-	}
+	static String
+	usuario = "admin",
+	password = "1234",
+	server = "jdbc:mysql://localhost:3306/agenda";
 	
-	public static String generarHash(String txt) {
-		String hashTxt = null;
+	public static void login() {
 		try {
-			MessageDigest digest = MessageDigest.getInstance("SHA-512");
-			byte[] hash = digest.digest(txt.getBytes(StandardCharsets.UTF_8));
-			hashTxt = Base64.getEncoder().encodeToString(hash);
+			System.out.print("Usuario: ");
+			Scanner tcl = new Scanner(System.in);
+			String user = tcl.nextLine();
+			if(comprobarElSiUsuarioExiste(user) == false) {
+				System.out.println("Nombre de usuario no encontrado");
+			} else {
+				boolean validPassword = true;
+				do {
+					System.out.print("Contraseña: ");
+					String password = tcl.nextLine();
+					comprobarPassword(password, user);
+				} while(validPassword == false);
+				
+			}
+			
+			
 		} catch (Exception e) {
-			System.out.println("El algoritmo SHA-512 no está disponible");
+			
 		}
-		return hashTxt;
+		
+	}
+	
+	public static boolean comprobarPassword(String password, String user) {
+		boolean validPassword = false;
+		try(Connection conexion = DriverManager.getConnection(Login.server, Login.usuario, Login.password)) {
+			PreparedStatement query = conexion.prepareStatement("SELECT salt, hash FROM usuarios WHERE nombre = ?",ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			query.setString(1, user);
+			ResultSet resultado = query.executeQuery();
+			resultado.next();
+			System.out.println(resultado.getString(1) +" "+ resultado.getString(2));
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return validPassword;
+	}
+	
+	public static boolean comprobarElSiUsuarioExiste(String nombre) {
+		boolean existe = false;
+		try(Connection conexion = DriverManager.getConnection(Login.server, Login.usuario, Login.password)) {
+			Statement query = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			String consulta = "SELECT * FROM usuarios";
+			ResultSet resultado = query.executeQuery(consulta);
+			//Recorrer la base
+			resultado.beforeFirst();
+			while(resultado.next() || existe == true) {
+				if(nombre.equalsIgnoreCase(resultado.getString("nombre")))
+					existe = true;
+			}
+		} catch (SQLException e) {
+			
+		}
+		return existe;
 	}
 	
 }

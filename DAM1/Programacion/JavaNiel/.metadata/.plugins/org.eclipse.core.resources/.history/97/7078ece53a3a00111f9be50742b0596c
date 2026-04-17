@@ -1,0 +1,45 @@
+package EjercicioLogin;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class Registro {
+	
+	public static void registro() {
+		try {
+			Scanner tcl = new Scanner(System.in);
+			System.out.print("Usuario: ");
+			String user = tcl.nextLine();
+			System.out.println(comprobarSiYaExisteElUsuario(user));
+			
+			
+		} catch (Exception e) {
+			
+		}
+		
+	}
+	
+	public static boolean comprobarSiYaExisteElUsuario(String nombre) {
+		String usuario = "admin";
+		String password = "1234";
+		String server = "jdbc:mysql://localhost:3306/agenda";
+		boolean existe = false;
+		try(Connection conexion = DriverManager.getConnection(server, usuario, password)) {
+			Statement query = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+			String consulta = "SELECT * FROM actor WHERE first_name = 'MARY'";
+			ResultSet resultado = query.executeQuery(consulta);
+			
+			
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		
+		
+		return existe;
+	}
+	
+}

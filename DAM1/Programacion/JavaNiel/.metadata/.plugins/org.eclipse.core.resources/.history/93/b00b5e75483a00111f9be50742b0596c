@@ -1,0 +1,49 @@
+package EjercicioLogin;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class Login {
+	
+	static String
+	usuario = "admin",
+	password = "1234",
+	server = "jdbc:mysql://localhost:3306/agenda";
+	
+	public static void login() {
+		try {
+			System.out.print("Usuario: ");
+			Scanner tcl = new Scanner(System.in);
+			String user = tcl.nextLine();
+			
+			
+		} catch (Exception e) {
+			
+		}
+		
+	}
+	
+	public static boolean comprobarElSiUsuarioExiste(String nombre) {
+		boolean existe = false;
+		try(Connection conexion = DriverManager.getConnection(server, usuario, password)) {
+			Statement query = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			String consulta = "SELECT * FROM usuarios";
+			ResultSet resultado = query.executeQuery(consulta);
+			//Recorrer la base
+			resultado.beforeFirst();
+			while(resultado.next() || existe == true) {
+				if(nombre.equalsIgnoreCase(resultado.getString("nombre")))
+					existe = true;
+			}
+		} catch (SQLException e) {
+			
+		}
+		return existe;
+	}
+	
+}

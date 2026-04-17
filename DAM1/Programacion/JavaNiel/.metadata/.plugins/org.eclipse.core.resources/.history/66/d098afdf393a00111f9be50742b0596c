@@ -1,0 +1,44 @@
+package Default;
+
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.SecureRandom;
+import java.util.Base64;
+
+public class Login {
+
+	public static void main(String[] args) {
+		
+		String user = "Daniel";
+		String password = "abc123";
+		
+		String salt = generarSalt();
+		
+		String hash = generarHash(salt + password);
+		System.out.println(hash.length());
+		
+	}
+	
+	public static String generarSalt() {
+		SecureRandom azar = new SecureRandom();
+		byte[] salt = new byte[16];
+		azar.nextBytes(salt);
+		
+		String cadenaSalt = Base64.getEncoder().encodeToString(salt);
+		
+		return cadenaSalt;
+	}
+	
+	public static String generarHash(String txt) {
+		String hashTxt = null;
+		try {
+			MessageDigest digest = MessageDigest.getInstance("SHA-512");
+			byte[] hash = digest.digest(txt.getBytes(StandardCharsets.UTF_8));
+			hashTxt = Base64.getEncoder().encodeToString(hash);
+		} catch (Exception e) {
+			System.out.println("El algoritmo SHA-512 no está disponible");
+		}
+		return hashTxt;
+	}
+	
+}

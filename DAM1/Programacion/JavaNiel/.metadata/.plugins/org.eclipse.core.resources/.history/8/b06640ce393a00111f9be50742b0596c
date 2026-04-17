@@ -1,0 +1,11 @@
+package EjercicioLogin;
+
+public class Registro {
+	
+	public static void registro() {
+		
+		System.out.println("hola");
+		
+	}
+	
+}

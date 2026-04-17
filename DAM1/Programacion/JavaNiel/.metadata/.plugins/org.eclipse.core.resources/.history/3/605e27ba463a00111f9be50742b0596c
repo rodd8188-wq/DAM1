@@ -1,0 +1,40 @@
+package EjercicioLogin;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		boolean opcionValida = true;
+		do {
+			int respuesta = mostrarMenu();
+			if(respuesta == 1) {
+				Login.login();
+			} else if(respuesta == 2) {
+				Registro.registro();
+			} else {
+				System.out.println("\nOpción no valida");
+				opcionValida = false;
+			}
+		} while (opcionValida == false);
+		
+	}
+	
+	public static int mostrarMenu() {
+		int respuesta = 0;
+		try {
+			System.out.println("|_____MENU_____|");
+			System.out.println("|1-Login       |");
+			System.out.println("|2-Registro    |");
+			System.out.println();
+			Scanner tcl = new Scanner(System.in);
+			System.out.print("Seleccione una opción:");
+			respuesta = tcl.nextInt();
+			
+		} catch (Exception e) {
+			
+		}
+		return respuesta;
+	}
+
+}

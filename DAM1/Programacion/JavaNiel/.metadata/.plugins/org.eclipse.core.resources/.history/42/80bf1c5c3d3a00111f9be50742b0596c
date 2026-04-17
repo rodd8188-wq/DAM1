@@ -1,0 +1,64 @@
+package EjercicioLogin;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class Registro {
+	
+	static String
+	usuario = "admin",
+	password = "1234",
+	server = "jdbc:mysql://localhost:3306/agenda";
+	
+	public static void registro() {
+		try {
+			boolean usuarioYaExistente = false;
+			do {
+				Scanner tcl = new Scanner(System.in);
+				System.out.print("Usuario: ");
+				String user = tcl.nextLine();
+				if(comprobarSiYaExisteElUsuario(user) == true) {
+					System.out.println("\nEse nombre de usuario ya existe");
+				} else {
+					System.out.print("Contraseña: ");
+					String password = tcl.nextLine();
+					System.out.print("\nRepite la contraseña: ");
+					String passWordX2 = tcl.nextLine();
+					if(password.equals(passWordX2) == false) {
+						System.out.println("Las contraseñas no coinciden");
+					} else {
+						
+					}
+				}
+			}while(usuarioYaExistente == true);
+			
+			
+		} catch (Exception e) {
+			
+		}
+		
+	}
+	
+	public static boolean comprobarSiYaExisteElUsuario(String nombre) {
+		boolean existe = false;
+		try(Connection conexion = DriverManager.getConnection(server, usuario, password)) {
+			Statement query = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+			String consulta = "SELECT * FROM usuarios";
+			ResultSet resultado = query.executeQuery(consulta);
+			//Recorrer la base
+			resultado.beforeFirst();
+			while(resultado.next() || existe == true) {
+				if(nombre.equalsIgnoreCase(resultado.getString("nombre")))
+					existe = true;
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return existe;
+	}
+	
+}

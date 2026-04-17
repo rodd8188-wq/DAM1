@@ -1,0 +1,29 @@
+package EjercicioLogin;
+
+import java.util.Scanner;
+
+public class Registro {
+	
+	public static void registro() {
+		try {
+			Scanner tcl = new Scanner(System.in);
+			System.out.print("Usuario: ");
+			String user = tcl.nextLine();
+			
+			
+			
+		} catch (Exception e) {
+			
+		}
+		
+	}
+	
+	public static boolean comprobarSiYaExisteElUsuario(String nombre) {
+		boolean existe = false;
+		
+		
+		
+		return existe;
+	}
+	
+}

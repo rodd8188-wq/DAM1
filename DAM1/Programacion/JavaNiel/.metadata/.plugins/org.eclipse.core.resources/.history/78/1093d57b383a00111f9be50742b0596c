@@ -1,0 +1,30 @@
+package EjercicioLogin;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		mostrarMenu();
+		
+	}
+	
+	public static int mostrarMenu() {
+		int respuesta = 0;
+		try {
+			System.out.println("|_____MENU_____|");
+			System.out.println("|1-Login       |");
+			System.out.println("|2-Registro    |");
+			System.out.println();
+			Scanner tcl = new Scanner(System.in);
+			System.out.print("Seleccione una opción:");
+			respuesta = tcl.nextInt();
+			
+		} catch (Exception e) {
+			
+		}
+		return respuesta;
+	}
+
+}
