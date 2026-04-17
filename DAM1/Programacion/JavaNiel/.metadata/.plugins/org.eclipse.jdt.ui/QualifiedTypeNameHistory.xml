@@ -3,7 +3,6 @@
     <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
     <fullyQualifiedTypeName name="java.util.regex.Pattern"/>
     <fullyQualifiedTypeName name="java.util.regex.Matcher"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="com.sun.tools.classfile.CharacterRangeTable_attribute"/>
     <fullyQualifiedTypeName name="CentroMedico.CentroMedico"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
@@ -43,11 +42,13 @@
     <fullyQualifiedTypeName name="java.sql.SQLException"/>
     <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
     <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
-    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
-    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="javax.swing.table.DefaultTableModel"/>
     <fullyQualifiedTypeName name="javax.swing.JTable"/>
     <fullyQualifiedTypeName name="javax.swing.JScrollBar"/>
     <fullyQualifiedTypeName name="java.lang.Object"/>
     <fullyQualifiedTypeName name="javax.swing.JFrame"/>
+    <fullyQualifiedTypeName name="EjercicioLogin.Registro"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 </qualifiedTypeNameHistroy>

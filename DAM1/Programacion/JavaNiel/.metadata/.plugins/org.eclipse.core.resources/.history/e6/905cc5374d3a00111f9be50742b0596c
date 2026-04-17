@@ -6,9 +6,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		boolean opcionValida = true;
-		Scanner tcl = new Scanner(System.in);
 		do {
-			int respuesta = mostrarMenu(tcl);
+			int respuesta = mostrarMenu();
 			if(respuesta == 1) {
 				Login.login();
 			} else if(respuesta == 2) {
@@ -18,16 +17,17 @@ public class Main {
 				opcionValida = false;
 			}
 		} while (opcionValida == false);
-		tcl.close();
+		
 	}
 	
-	public static int mostrarMenu(Scanner tcl) {
+	public static int mostrarMenu() {
 		int respuesta = 0;
 		try {
-			System.out.println(" |-----MENU-----|");
-			System.out.println(" |1-Login       |");
-			System.out.println(" |2-Registro    |");
+			System.out.println("|_____MENU_____|");
+			System.out.println("|1-Login       |");
+			System.out.println("|2-Registro    |");
 			System.out.println();
+			Scanner tcl = new Scanner(System.in);
 			System.out.print("Seleccione una opción:");
 			respuesta = tcl.nextInt();
 			

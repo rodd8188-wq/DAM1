@@ -22,8 +22,8 @@ public class Registro {
 	public static void registro() {
 		try {
 			boolean usuarioYaExistente = false;
-			Scanner tcl = new Scanner(System.in);
 			do {
+				Scanner tcl = new Scanner(System.in);
 				System.out.print("Usuario: ");
 				String user = tcl.nextLine();
 				//Comprobar si ya existe el usuario
@@ -60,14 +60,15 @@ public class Registro {
 					}while(passwordsWrong == true);
 				}
 			}while(usuarioYaExistente == true);
-			tcl.close();
+			
+			
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			
 		}
 		
 	}
 	
-	private static boolean comprobarSiElUsuarioExiste(String nombre) {
+	public static boolean comprobarSiElUsuarioExiste(String nombre) {
 		boolean existe = false;
 		try(Connection conexion = DriverManager.getConnection(Registro.server, Registro.usuario, Registro.password)) {
 			Statement query = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
@@ -85,7 +86,7 @@ public class Registro {
 		return existe;
 	}
 	
-	private static String generarSalt() {
+	public static String generarSalt() {
 		SecureRandom azar = new SecureRandom();
 		byte[] salt = new byte[16];
 		azar.nextBytes(salt);
@@ -93,7 +94,7 @@ public class Registro {
 		return cadenaSalt;
 	}
 	
-	private static String generarHash(String salt, String pass) {
+	public static String generarHash(String salt, String pass) {
 		String txt = salt + pass;
 		String hashTxt = null;
 		try {
@@ -106,7 +107,7 @@ public class Registro {
 		return hashTxt;
 	}
 	
-	private static void grabarRegistro(String salt, String user, String hash, String email) {
+	public static void grabarRegistro(String salt, String user, String hash, String email) {
 		try(Connection conexion = DriverManager.getConnection(Registro.server, Registro.usuario, Registro.password)) {
 			PreparedStatement query = conexion.prepareStatement("INSERT INTO usuarios VALUES(?, ?, ?, ?, ?)", ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
 			//Asignar valores

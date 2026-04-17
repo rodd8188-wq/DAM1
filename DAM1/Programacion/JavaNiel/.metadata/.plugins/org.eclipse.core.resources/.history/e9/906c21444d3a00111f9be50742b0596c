@@ -60,7 +60,7 @@ public class Registro {
 					}while(passwordsWrong == true);
 				}
 			}while(usuarioYaExistente == true);
-			tcl.close();
+			//tcl.close();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

@@ -31,33 +31,19 @@ public class Login {
 					System.out.print("Contraseña: ");
 					String password = tcl.nextLine();
 					if(comprobarPassword(password, user) == false) {
-						System.out.println("Contraseña incorrecta");
 						validPassword = false;
 					} else {
 						System.out.println("Acceso concedido");
-						validPassword = true;
-						mostrarDatos(user);
 					}
 				} while(validPassword == false);
+				
 			}
-			tcl.close();
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
-	}
-	
-	private static void mostrarDatos(String user) {
-		try(Connection conexion = DriverManager.getConnection(Login.server, Login.usuario, Login.password)) {
-			PreparedStatement query = conexion.prepareStatement("SELECT nombre, email,privilegios FROM usuarios WHERE nombre = ?",ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-			query.setString(1, user);
-			ResultSet resultado = query.executeQuery();
-			resultado.next();
-			System.out.println("---DATOS DEL USUARIO---");
-			System.out.printf("Nombre: %s\nCorreo: %s\nPrivilegios: %d",resultado.getString(1),resultado.getString(2),resultado.getInt(3));
 			
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
+			
+		} catch (Exception e) {
+			
 		}
+		
 	}
 	
 	private static boolean comprobarPassword(String password, String user) {

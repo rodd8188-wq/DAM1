@@ -40,7 +40,6 @@ public class Login {
 					}
 				} while(validPassword == false);
 			}
-			tcl.close();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

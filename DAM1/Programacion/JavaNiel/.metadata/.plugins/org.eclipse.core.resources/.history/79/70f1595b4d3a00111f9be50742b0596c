@@ -24,9 +24,9 @@ public class Main {
 	public static int mostrarMenu(Scanner tcl) {
 		int respuesta = 0;
 		try {
-			System.out.println(" |-----MENU-----|");
-			System.out.println(" |1-Login       |");
-			System.out.println(" |2-Registro    |");
+			System.out.println("|_____MENU_____|");
+			System.out.println("|1-Login       |");
+			System.out.println("|2-Registro    |");
 			System.out.println();
 			System.out.print("Seleccione una opción:");
 			respuesta = tcl.nextInt();
