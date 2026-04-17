@@ -19,29 +19,33 @@ public class BaseDeDatos1 {
 			System.out.println("Conexión realizada con éxito");
 			
 			//Se puede reutilizar todas las veces que quieras
-			///Statement query = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+			Statement query = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
 			
 			//El ResultSet por defecto solo puede ir hacia delante (ResultSet.TYPE_FORWARD_ONLY) y datos de solo lectura (ResultSet.CONCUR_READ_ONLY)
 			///Statement query = conexion.createStatement();
 			
 			//Realizar una consulta
-			///String consulta = "SELECT * FROM actor WHERE first_name = 'MARY'";
-			///ResultSet resultado = query.executeQuery(consulta);
+			String consulta = "SELECT * FROM actor WHERE first_name = 'MARY'";
+			ResultSet resultado = query.executeQuery(consulta);
 			
 			//Modificar un registro en concreto (Update)
-			/*
-			resultado.absolute(67);
-			resultado.updateString("first_name", "Inés");
-			resultado.updateString("last_name", "Perado");
-			*/
+			///resultado.absolute(67);
+			///resultado.updateString("first_name", "Inés");
+			///resultado.updateString("last_name", "Perado");
+			
 			//Para aplicar los cambios
 			///resultado.updateRow();
 			
 			//Realizar una consulta preparada (Con datos que puedan variar) (Al dato que cambia se le pone como una ?)
-			PreparedStatement query = conexion.prepareStatement("SELECT * FROM actor WHERE first_name = ? AND last_name = ?", ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-			query.setString(1, "Mary");
-			query.setString(2, "Keitel");
-			ResultSet resultado = query.executeQuery();
+			///PreparedStatement query = conexion.prepareStatement("SELECT * FROM actor WHERE first_name = ? AND last_name = ?", ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			///query.setString(1, "Mary");
+			///query.setString(2, "Keitel");
+			///ResultSet resultado = query.executeQuery();
+			
+			//Si devuelve resultados utilizamos:
+			///query.executeQuery();
+			//Si no devuelve resultados utilizamos:
+			///query.executeUpdate();
 			
 			//Recorrer la consulta
 			resultado.afterLast();

@@ -1,0 +1,52 @@
+package Default;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class BaseDeDatos2 {
+	public static void main(String[] args) {
+		
+		String usuario = "admin";
+		String password = "1234";
+		String server = "jdbc:mysql://localhost:3306/";
+		
+		try(Connection conexion = DriverManager.getConnection(server, usuario, password)) {
+			System.out.println("Conexión realizada con éxito");
+			
+				//
+				//Query de insert
+				//
+			///PreparedStatement query = conexion.prepareStatement("INSERT INTO actor VALUES (NULL, ?, ?, ?)");
+			///query.setString(1, "Daniel");	//first_name
+			///query.setString(2, "Rodriguez");	//last_name
+			//Generar la fecha actual en el formato que se necesita en la base
+			///LocalDateTime fechaHora = LocalDateTime.now();
+			///DateTimeFormatter formato = DateTimeFormatter.ofPattern("YYYY-MM-dd HH:mm:ss");
+			///String fechaFormateada = fechaHora.format(formato);
+			///query.setString(3, fechaFormateada);	//last_update
+			//Ejecutar los cambios
+			///query.executeUpdate();
+			
+				//
+				//Query de creación de base de datos
+				//
+			//Crear los query
+			String query1 = "CREATE DATABASE IF NOT EXISTS agenda";
+			String query2 = "USE agenda";
+			String query3 = "CREATE TABLE IF NOT EXISTS(telefono INT(9) PRIMARY KEY, nombre VARCHAR(50))";
+			//Ejecutar los query
+			Statement query = conexion.createStatement();
+			query.executeUpdate(query1);
+			query.executeUpdate(query2);
+			query.executeUpdate(query3);
+			
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+}

@@ -1,0 +1,63 @@
+package Default;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.swing.JFrame;
+import javax.swing.JScrollBar;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+public class BaseDeDatos_con_Swing {
+
+	public static void main(String[] args) {
+		
+		String usuario = "admin";
+		String password = "1234";
+		String server = "jdbc:mysql://localhost:3306/sakila";
+		
+		try(Connection conexion = DriverManager.getConnection(server, usuario, password)) {
+			System.out.println("Conexión realizada con éxito");
+			
+			Statement query = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+			String consulta = "SELECT * FROM actor";
+			ResultSet resultado = query.executeQuery(consulta);
+			
+			//Crear la ventana
+			JFrame ventana = new JFrame("Tabla actor");
+			//Crear la tabla
+			DefaultTableModel modelo = new DefaultTableModel();
+			JTable tabla = new JTable(modelo);
+			//Crear las columnas
+			modelo.addColumn("actor_id");
+			modelo.addColumn("first_name");
+			modelo.addColumn("last_name");
+			//Crear la barra de scroll
+			JScrollPane scroll = new JScrollPane(tabla);
+			ventana.getContentPane().add(scroll);
+			
+			resultado.beforeFirst();
+			while(resultado.previous()) {
+				Object[] fila = new Object[3];
+				fila[1] = resultado.getInt("actor_id");
+				fila[2] = resultado.getString("first_name");
+				fila[3] = resultado.getString("last_name");
+				//Añadir a la fila
+				modelo.addRow(fila);
+			}
+			
+			ventana.pack();
+			ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			ventana.setVisible(true);
+			
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		
+	}
+
+}
