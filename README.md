@@ -7,7 +7,7 @@
 **Clonar un repositorio:**  `git clone url.git`  
 Limpiar/Descartar:  `git restore .`  
 *Subir archivos*  
-`git status``git add .``git commit -m "descripcion"``git push*  
+`git status``git add .``git commit -m "descripcion"``git push`  
 *Bajar archivos*  
 `git pull`  
 *Declara como trabajar*  
