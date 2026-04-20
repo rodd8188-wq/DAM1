@@ -1,5 +1,5 @@
 **DAM1**  
-**Ver estado:**  git status  
+**Ver estado:**  `git status`  
    
  **Bajar cambios:**  git pull  
    
