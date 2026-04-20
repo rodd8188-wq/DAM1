@@ -6,11 +6,12 @@
 **Subir a la nube:**  `git push`  
 **Clonar un repositorio:**  `git clone url.git`  
 Limpiar/Descartar:  `git restore .`  
-*Subir archivos*  
+  
+#### Subir archivos  
 `git status``git add .``git commit -m "descripcion"``git push`  
-*Bajar archivos*  
+#### Bajar archivos  
 `git pull`  
-*Declara como trabajar*  
+#### Declara como trabajar  
 `git config pull.rebase false`  
-*Sustituir todos los “ “ por “_”*  
+#### Sustituir todos los “ “ por “_”  
 `find . -depth -name "* *" -exec rename 's/ /_/g' {} +`
