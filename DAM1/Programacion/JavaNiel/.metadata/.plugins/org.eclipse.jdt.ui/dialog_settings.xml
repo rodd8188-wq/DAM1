@@ -33,7 +33,7 @@
 	<section name="JavaElementSearchActions">
 	</section>
 	<section name="NewClassCreationWizard.dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="362"/>
+		<item key="DIALOG_X_ORIGIN" value="152"/>
 		<item key="DIALOG_Y_ORIGIN" value="322"/>
 		<item key="DIALOG_WIDTH" value="808"/>
 		<item key="DIALOG_HEIGHT" value="635"/>
@@ -71,7 +71,7 @@
 		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|10.0|0|GTK|1|"/>
 	</section>
 	<section name="NewPackageCreationWizard.dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="591"/>
+		<item key="DIALOG_X_ORIGIN" value="422"/>
 		<item key="DIALOG_Y_ORIGIN" value="282"/>
 		<item key="DIALOG_WIDTH" value="538"/>
 		<item key="DIALOG_HEIGHT" value="500"/>

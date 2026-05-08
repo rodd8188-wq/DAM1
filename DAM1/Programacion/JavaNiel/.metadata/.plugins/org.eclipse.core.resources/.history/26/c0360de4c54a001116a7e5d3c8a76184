@@ -1,0 +1,13 @@
+package Boletin27Daniel;
+
+public class Pokemon {
+	private int codigo;
+	private String nombre;
+	private double peso;
+	private double altura;
+	private String tipo[] = new String[2];
+	
+	public Pokemon(int cod, String nom, double peso, double altura, String tipo1) {
+		
+	}
+}

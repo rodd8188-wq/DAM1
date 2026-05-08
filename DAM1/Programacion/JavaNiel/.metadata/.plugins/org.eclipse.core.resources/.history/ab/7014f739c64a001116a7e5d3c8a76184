@@ -1,0 +1,39 @@
+package Boletin27Daniel;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		
+		
+	}
+	
+	public static void recuperarPokemons() {
+		//Datos de la Base de Datos	
+		String usuario = "admin";
+		String password = "1234";
+		String server = "jdbc:mysql://localhost:3306/pokemondb";
+		
+		try(Connection conexion = DriverManager.getConnection(server, usuario, password)) {
+			
+			PrepareStatement query = conexion.prepareStatement("SELECT * FROM actor WHERE first_name = ?", ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			query.setString(1, nombre);
+			ResultSet resultado = query.executeQuery();
+			
+			resultado.beforeFirst();
+			while(resultado.next()) {
+				System.out.printf("ID: %d Nombre: %s %s \n",resultado.getInt("actor_id"), resultado.getString("first_name"), resultado.getString("last_name"));
+			}
+			
+		} catch(SQLException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+}
