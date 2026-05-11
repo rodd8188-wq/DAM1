@@ -1,0 +1,5 @@
+package Interfaces;
+
+public class Persona implements Juvilada{
+
+}

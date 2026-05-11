@@ -1,9 +1,6 @@
 package Boletin27Daniel;
 
-import java.util.ArrayList;
-
-public class Pokemon {
-	public static ArrayList<Pokemon> pokemons = new ArrayList<>();
+public class Pokemon implements Comparable<Pokemon>{
 	private int codigo;
 	private String nombre;
 	private double peso;
@@ -16,6 +13,41 @@ public class Pokemon {
 		this.peso = peso;
 		this.altura = altura;
 		this.tipo[0] = tipo1;
-		pokemons.add(this);
+		this.tipo[1] = null;
+	}
+	public Pokemon(int cod, String nom, double peso, double altura, String tipo1, String tipo2) {
+		this.codigo = cod;
+		this.nombre = nom;
+		this.peso = peso;
+		this.altura = altura;
+		this.tipo[0] = tipo1;
+		this.tipo[1] = tipo2;
+	}
+	public String getNombre() {
+		return this.nombre;
+	}
+	public void setTipo2(String tipo) {
+		this.tipo[1] = tipo;
+	}
+	public String getTipo1() {
+		return this.tipo[0];
+	}
+	
+	@Override
+	public String toString() {
+		if(this.tipo[1] == null) {
+		String string = this.nombre + " (#" + this.codigo + 
+				") - " + this.tipo[0] + "\n Peso: " + this.peso + "\n Altura: " + this.altura;
+		return string + "\n";
+		} else {
+			String string = this.nombre + " (#" + this.codigo + 
+					") - " + this.tipo[0] + " y " + this.tipo[1] + "\n Peso: " + this.peso + "\n Altura: " + this.altura;
+			return string + "\n";
+		}
+	}
+	
+	@Override
+	public int compareTo(Pokemon pokemon) {
+		return this.nombre.compareTo(pokemon.nombre);
 	}
 }

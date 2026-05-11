@@ -6,16 +6,23 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Main {
 
 	public static void main(String[] args) {
-		
-		recuperarPokemons();
-		
+		// Creamos la lista de pokemons
+		ArrayList<Pokemon> pokemons = recuperarPokemons();
+		// Ordenamos la lista por orden alfabetico
+		Collections.sort(pokemons);
+		// Mostramos la lista
+		for(Pokemon p: pokemons)
+			System.out.println(p);
 	}
 	
-	public static void recuperarPokemons() {
+	public static ArrayList<Pokemon> recuperarPokemons() {
+		ArrayList<Pokemon> pokemons = new ArrayList<>();
 		//Datos de la Base de Datos	
 		String usuarioDB = "admin";
 		String passwordDB = "1234";
@@ -27,21 +34,41 @@ public class Main {
 			Statement query = conexion.createStatement(
 					ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 			
-			String consulta = "SELECT * FROM pokemon";
+			String consulta =
+					"SELECT "
+					+ "pokemon.numero_pokedex, "
+					+ "pokemon.nombre, "
+					+ "pokemon.peso, "
+					+ "pokemon.altura, "
+					+ "tipo.nombre "
+					+ "FROM pokemon "
+					+ "JOIN pokemon_tipo USING(numero_pokedex) "
+					+ "JOIN tipo USING(id_tipo); ";
 			ResultSet resultado = query.executeQuery(consulta);
 			//Recorrer la consulta
 			resultado.beforeFirst();
 			while(resultado.next()) {
-				new Pokemon(resultado.getInt("numero_pokedex"),
-						resultado.getString("nombre"),
-						resultado.getDouble("peso"),
-						resultado.getDouble("altura"),
-						"");
+				pokemons.add(new Pokemon(resultado.getInt(1),
+						resultado.getString(2),
+						resultado.getDouble(3),
+						resultado.getDouble(4),
+						resultado.getString(5)));
+			}
+			int tamanyo = pokemons.size();
+			for(int x=0;x<tamanyo;x++) {
+				for(int y=0;y<tamanyo;y++) {
+					if(x != y && pokemons.get(x).getNombre().equals(pokemons.get(y).getNombre())) {
+						pokemons.get(x).setTipo2(pokemons.get(y).getTipo1());
+						pokemons.remove(y);
+						tamanyo--;
+					}
+				}
 			}
 			
 		} catch(SQLException e) {
 			System.out.println(e.getMessage());
 		}
+		return pokemons;
 	}
 
 }

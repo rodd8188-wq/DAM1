@@ -1,0 +1,2541 @@
+package Default;
+
+import java.io.BufferedReader;
+import java.io.Closeable;
+import java.io.File;
+import java.io.FileReader;
+import java.lang.reflect.Array;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.InputMismatchException;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Map.Entry;
+import java.util.concurrent.ThreadPoolExecutor.DiscardOldestPolicy;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class EjerciciosD {
+
+	public static void main(String[] args) {
+		
+		//Hola
+		
+		///Escribir un número y decir si es par o impar.
+		/*
+		Scanner teclado = new Scanner(System.in);
+		int numero;
+		System.out.println("Escribe un número:");
+		numero = teclado.nextInt();
+			
+		if (numero%2==0) {
+			System.out.println("El número " + numero + "es par");
+		}
+		else
+			System.out.println("El número " + numero + "es impar");
+		teclado.close();
+		*/
+		
+		
+		//for(int i=0; i<5; i++)
+		//	System.out.println(i);
+		
+		
+		//int i=0;
+		//while(i<5) {
+		//	System.out.println(i);
+		//	i++;
+		//}	
+		
+		///Escribir un numero entero continua el programa y el 0 lo termina.
+		/*
+		Scanner teclado = new Scanner(System.in);
+		int tecla = 9;
+		while(tecla != 0) {
+		System.out.println("Escribe un entero. 0 para salir: ");
+		tecla = teclado.nextInt();
+		System.out.println(tecla);	
+		}
+		teclado.close();
+		System.out.println("Fin del programa");
+		*/
+		
+		
+		///Esto no se hace con break (parece IA)
+		/*
+		int tecla;
+		Scanner teclado = new Scanner(System.in);
+		
+		while(true) {
+			System.out.println("Escribe un entero. 0 para salir:");
+			tecla = teclado.nextInt();
+				if(tecla == 0)
+					break;
+		*/
+		
+		
+		///Programa donde se muestren los 10 primeros números enteros:
+		/*
+		int numero = 1;
+			for (numero = 1;numero<=10 ;numero++) {
+				System.out.println(numero);
+			}
+		*/
+		
+		
+		///Programa donde se muestren los 50 números pares:
+		/*
+		int numero = 2;
+			for (numero = 2 ;numero<101 ; numero++) {
+				if (numero%2==0) {
+					System.out.println(numero);
+				}
+			}
+		*/
+		
+		
+		///Programa donde se muestren los 5 primeros números múltiplos de uno dado por el usuario (se introducirá por teclado)
+		/*
+		int tecla;
+		int contador;
+		int numero = 0;
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("Escribe un número:");
+		tecla = teclado.nextInt();
+		int teclapresionada = tecla;
+		for(contador=0;contador<5;contador++) {
+			tecla = tecla + teclapresionada;
+			System.out.println(tecla);
+		}
+		System.out.println("Fin del programa");
+		*/
+		
+		///Generar un numero aleatorio entre el 0 y el 0.99999999...
+		/*
+		Math.random();
+		*/
+		
+		///Generar un numero aleatorio entre el 1 y el 6:
+		/*
+		double azar = Math.random();
+		System.out.println(azar);
+		azar = azar * 6;
+		System.out.println(azar);
+		azar = azar + 1;
+		System.out.println(azar);
+		int dado = (int)azar;
+		System.out.println(dado);
+		*/
+		
+		
+		///Generar un numero aleatorio entre el 5 y el 15:
+		/*
+		int inicio = 5;
+		int fin = 15;
+		int dado = (int)(Math.random()*(fin-inicio+1))+inicio;
+		System.out.println(dado);
+		*/
+		
+		///Generar un numero aleatorio entre el 5 y el 15:
+		/*
+		int dado = (int)(Math.random()*11)+5;
+		System.out.println(dado);
+		*/
+		
+		
+		///Repetir este fragmento 100 veces:
+		/*
+		for(int i = 0; i<100; i++) {
+		}
+		*/
+		
+		///8.Escribir un programa que reciba por teclado el importe de una cantidad a pagar en euros
+		///(puede tener decimales) y el número de meses que contamos para pagarla (tiene que ser un
+		///número entero) y nos devuelva el dinero que tendríamos que pagar cada mes. No aplicamos
+		///intereses de ningún tipo y redondeamos a dos decimales:
+		/*
+		double importe;
+		int meses;
+		double resto;
+		Scanner teclado = new Scanner(System.in);
+			System.out.println("Importe a pagar");
+			importe = teclado.nextDouble();
+			System.out.println("Meses para pagarlo:");
+			meses = teclado.nextInt();
+			teclado.close();
+		resto = importe / meses;
+		System.out.println(resto);
+		*/
+		
+		///9.Escribir un programa que genere un número aleatorio entre el 0 y el 50 y lo muestre
+		/*
+		int dado = (int)(Math.random()*51)+0;
+		System.out.println(dado);
+		*/
+		
+		///10.Escribir un programa que genere dos números aleatorios simultáneamente entre el 1 y el 6
+		///(simulando una tirada de dos dados)
+		/*
+		for(int i=0;i<2;i++) {
+			int dado = (int)(Math.random()*6)+1;
+			System.out.println(dado);
+			}
+		*/
+		
+		
+		///11.Modificar el programa anterior para que tu programa tire dos dados de forma continuada
+		///hasta que el número que salga en ambos sea el mismo. En ese momento debería de parar la
+		///ejecución e informarnos de cuantas tiradas ha tenido que hacer para llegar a ese resultado
+		/*
+		int dado1=1;
+		int dado2=2;
+		for(int i=1; dado1 != dado2;i++) {
+			dado1 = (int)(Math.random()*6)+1;
+			dado2 = (int)(Math.random()*6)+1;
+			System.out.println(dado1+" "+dado2);
+			if (dado1 == dado2) {
+				if (i==1) {
+					System.out.println("Con "+i+" intento");}
+					else {
+						System.out.println("Con "+i+" intentos");
+					}
+				}
+			}
+		*/
+		
+		
+		///12.Escribir un programa que sirva como asistente para un juego de rol. Tu programa debería de
+		///pedir por teclado el número de dados que se van a tirar y el número de caras de estos (4, 6,
+		///8, 12, etc.) A continuación debería de hacer la tirada y mostrarla.
+		/*
+		int dados=1;
+		Scanner teclado1 = new Scanner(System.in);
+		System.out.println("Escribe el número de dados que quieras tirar:");
+		Scanner teclado2 = new Scanner(System.in);
+		int num_dados = teclado1.nextInt();
+		System.out.println("Escribe el número de caras que tengan los dados:");
+		int num_caras = teclado2.nextInt();
+		for (int i=1;dados<=num_dados;dados++) {
+			int dado = (int)(Math.random()*num_caras)+1;
+			System.out.print(dado+" ");
+		}
+		*/
+		
+		
+		///13.Modifica el programa anterior para que no admita dados con un número de caras impares
+		///(¡no existen!). En el caso de meter un número impar de caras el programa debería de
+		///informarnos de que es erróneo y volver a preguntarnos por este dato.
+		/*
+		int dados=1;
+		Scanner teclado1 = new Scanner(System.in);
+		System.out.println("Escribe el número de dados que quieras tirar:");
+		int num_dados = teclado1.nextInt();
+		Scanner teclado2 = new Scanner(System.in);
+		System.out.println("Escribe el número de caras que tengan los dados:");
+		int num_caras = teclado2.nextInt();
+		while (num_caras%2!=0)	{
+			System.out.println("El número es impar, inserte un número par:");
+			num_caras = teclado2.nextInt();
+			}
+		for (;dados<=num_dados;dados++) {
+					int dado = (int)(Math.random()*num_caras)+1;
+					System.out.print(dado+" ");
+			}
+		*/
+		
+		
+		///14.Escribir un programa que nos pida dos números por teclado y genere un número aleatorio
+		///comprendido entre ambos. Por el momento no te preocupes de que el primer número
+		///siempre debería de ser menor que el segundo, simplemente no los metas en un orden
+		///incorrecto
+		/*
+		Scanner teclado1 = new Scanner(System.in);
+		Scanner teclado2 = new Scanner(System.in);
+		System.out.println("Generar un número aleatorio entre dos números");
+		System.out.println("Escribe el primer número:");
+		int numero1 = teclado1.nextInt();
+			System.out.println("Escribe el segundo número:");
+		int numero2 = teclado2.nextInt();
+		int dado = (int)(Math.random()*numero2-numero1+1)+numero1;
+			System.out.println(dado);
+		teclado1.close();
+		teclado2.close();
+		*/
+		
+		
+		///15.Modificar el programa del punto anterior para que si el primer número que metemos es
+		///mayor que el segundo funcione correctamente. Es decir, si metemos en primer lugar el 50 y
+		///en segundo el 10 nos debería de generar un número aleatorio entre el 10 y el 50 (y no entre el
+		///50 y el 10 que no tiene mucha lógica…)
+		/*
+		Scanner teclado1 = new Scanner(System.in);
+		Scanner teclado2 = new Scanner(System.in);
+		System.out.println("Generar un número aleatorio entre dos números");
+		System.out.println("Escribe el primer número:");
+		int numero1 = teclado1.nextInt();
+			System.out.println("Escribe el segundo número:");
+		int numero2 = teclado2.nextInt();
+		while (numero2<=numero1) {
+			System.err.println("Error, el segundo número debe ser mayor que el primero");
+			System.out.println("Escribe el segundo número:");
+			numero2 = teclado2.nextInt();
+		}
+		int dado = (int)(Math.random()*(numero2-numero1+1)+numero1);
+			System.out.println(dado);
+		teclado1.close();
+		teclado2.close();
+		*/
+		
+		
+		///16.Escribir un programa que genere seis números aleatorios entre el 1 y el 49 (simulando una
+		///lotería primitiva). Por el momento no te preocupes de que algunos números puedan salir
+		///repetidos. Ya resolveremos eso más adelante.
+		/*
+		for (int i=1;i<=6;i++) {
+			int dado = (int)(Math.random()*49+1);
+			System.out.print(dado+" ");
+		}
+		*/
+		
+		
+		///17.Escribir un programa que nos permita generar una quiniela. Para ello nos debe generar
+		///quince números aleatorios entre el 1 y el 3. Recuerda que los resultados válidos son 1 X o 2,
+		///así que si te sale un 3 lo que tienes que imprimir en pantalla es una X.
+		/*
+		for (int i=1;i<=15;i++) {
+			int dado = (int)(Math.random()*3+1);
+			if (dado==3) {
+				System.out.print("X ");
+			}
+			else {
+				System.out.print(dado+" ");
+			}
+		}
+		*/
+		
+		
+		///18.Escribe un programa que genere números aleatorios entre el 1 y el 1000 sin parar y que sólo
+		///se detenga cuando salga el 666. Los números que ha tenido que generar tu programa hasta
+		///aparecer el 666 son los que restan para el apocalipsis. Tu programa debería de indicarlo con
+		///un mensaje tétrico (¡Faltan 236 días para que se acabe todo! por ejemplo).
+		/*
+		int i=1;
+		int dado=0;
+		for (i=1;dado!=666;i++) {
+			dado=(int)(Math.random()*1000+1);
+			System.out.println(dado);
+		}
+		System.out.println("Quedan "+ i +" dias para el apocalipsis.");
+		*/
+		
+		
+		///Pasar de un decimal a un entero y de un entero a un decimal.
+		/*
+		String textoEntero = "33";
+		String textoConDecimales = "33.56";
+		int entero = 42;
+		double conDecimales = 44.67;
+		
+		int num1 = Integer.parseInt(textoEntero);
+		System.out.println("num1 "+num1);
+		
+		double num2 = Double.parseDouble(textoConDecimales);
+		System.out.println("num2 "+num2);
+		
+		String texto1 = String.valueOf(entero);
+		System.out.println("texto1 "+texto1);
+		String texto2 = String.valueOf(conDecimales);
+		System.out.println("texto2 "+texto2);
+		
+		double num3 = (double)entero;
+		System.out.println("num3 "+num3);
+		
+		int num4= (int)conDecimales;
+		System.out.println("num4 "+num4);
+		
+		int num5 = (int) Math.round(conDecima"num3 "+les);
+		System.out.println("num5 "+num5);
+		*/
+		
+		
+		///Redondear a 4 decimales
+		/*
+		final double PI = 3.141559;
+		System.out.println(PI);
+		double num6 = Math.round(PI*10000)/10000.0;
+		System.out.println("Redondeado a 4 decimales");
+		System.out.println(num6);
+		*/
+		
+		
+		///El maximo o el minimo entre varios numeros
+		/*
+		int num4 = 539;
+		int num5 = 3;
+		
+		int maximo = Math.max(num4, num5);
+		System.out.println(maximo);
+		
+		double minimo = Math.min(num4, num5);
+		System.out.println(minimo);
+		*/
+		
+		
+		///19. Escribir un programa que pida un número por teclado y nos muestre sus divisores.
+		/*
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("Escriba el numero para expresar sus divisores");
+		int numero = teclado.nextInt();
+		for(int i=1;numero%2<=0;i++) {
+			if (numero%i==0 && i>0)
+				System.out.println(i);
+			}
+		teclado.close();
+		*/
+		
+		///Comprobar si la cadena esta vacia.
+		/*
+		String cadenaVacia="";
+		String cadenaNula;
+		String cadenaNula2=null;
+		
+		if(cadenaVacia.isEmpty()==true)
+			System.out.println("La cadena esta vacia");
+		
+		if(cadenaVacia.equals("")==true)
+			System.out.println("La cadena esta vacia");
+		
+		if(cadenaVacia.compareTo("")==0)
+			System.out.println("La cadena esta vacia");
+		*/
+		
+		
+		///Muestra la posición del primer caracter o grupo de caracteres proporcionado que encuentra (Si 
+		///el caracter o caracteres no se encuentran se muestra con un -1).
+		/*
+		String texto = "Hola mundo cruel";
+		System.out.println(texto.indexOf("H"));
+		System.out.println(texto.indexOf("cruel"));
+		*/
+		
+		///Replace
+		/*
+		String texto = "Hola mundo cruel";
+		System.out.println(texto.replace(" ","-"));		//NO CAMBIA EL CONTENIDO DE LA VARIABLE
+		System.out.println(texto);
+		*/
+		
+		///Para cambiar el contenido de la variable con replace (o con otras secuencias):
+		/*
+		String texto = "Hola mundo cruel";
+		texto = texto.replace(" ","-");
+		System.out.println(texto);
+		*/
+		
+		
+		///1.Escribir un programa que nos pida tres palabras por teclado en cualquier orden y nos las
+		///muestre en pantalla ordenadas alfabeticamente en orden ascendente.
+		/*
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("Escribe la primera palabra:");
+			String Palabra1 = teclado.nextLine();
+		System.out.println("Escribe la segunda palabra:");
+			String Palabra2 = teclado.nextLine();
+		System.out.println("Escribe la tercera palabra:");
+			String Palabra3 = teclado.nextLine();
+		String p1="";
+		String p2="";
+		String p3="";
+		if(Palabra1.compareTo(Palabra2)<0 && Palabra1.compareTo(Palabra3)<0) {
+			p1 = Palabra1;
+			}
+			else if(Palabra2.compareTo(Palabra1)<0 && Palabra2.compareTo(Palabra3)<0) {
+				p1 = Palabra2;
+				}
+				else {
+					p1 = Palabra3;
+				}
+		if(Palabra1.compareTo(Palabra2)>0 && Palabra1.compareTo(Palabra3)<0) {
+			p2 = Palabra1;
+			}
+			else if(Palabra2.compareTo(Palabra1)>0 && Palabra2.compareTo(Palabra3)<0) {
+				p2 = Palabra2;
+				}
+			else {
+				p2 = Palabra3;
+			}
+		if(Palabra1.compareTo(Palabra2)>0 && Palabra1.compareTo(Palabra3)>0) {
+			p3 = Palabra1;
+			}
+			else if(Palabra2.compareTo(Palabra1)>0 && Palabra2.compareTo(Palabra3)>0) {
+				p3 = Palabra2;
+				}
+				else {
+					p3 = Palabra3;
+				}
+		System.out.println("En orden alfabetico");
+		System.out.println(p1+" "+p2+" "+p3);
+		*/
+		
+		
+		///2.Idem al anterior pero ordenando ahora en orden descendente.
+		/*
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("Escribe la primera palabra:");
+			String Palabra1 = teclado.nextLine();
+		System.out.println("Escribe la segunda palabra:");
+			String Palabra2 = teclado.nextLine();
+		System.out.println("Escribe la tercera palabra:");
+			String Palabra3 = teclado.nextLine();
+		String p1="";
+		String p2="";
+		String p3="";
+		if(Palabra1.compareTo(Palabra2)<0 && Palabra1.compareTo(Palabra3)<0) {
+			p1 = Palabra1;
+			}
+			else if(Palabra2.compareTo(Palabra1)<0 && Palabra2.compareTo(Palabra3)<0) {
+				p1 = Palabra2;
+				}
+				else {
+					p1 = Palabra3;
+				}
+		if(Palabra1.compareTo(Palabra2)>0 && Palabra1.compareTo(Palabra3)<0) {
+			p2 = Palabra1;
+			}
+			else if(Palabra2.compareTo(Palabra1)>0 && Palabra2.compareTo(Palabra3)<0) {
+				p2 = Palabra2;
+				}
+			else {
+				p2 = Palabra3;
+			}
+		if(Palabra1.compareTo(Palabra2)>0 && Palabra1.compareTo(Palabra3)>0) {
+			p3 = Palabra1;
+			}
+			else if(Palabra2.compareTo(Palabra1)>0 && Palabra2.compareTo(Palabra3)>0) {
+				p3 = Palabra2;
+				}
+				else {
+					p3 = Palabra3;
+				}
+		System.out.println("En orden alfabetico");
+		System.out.println(p3+" "+p2+" "+p1);
+		*/
+		
+		
+		///Ejecuta solo la opción (case) que tenga su valor (Son como varios if).
+		/*
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("Escribe un número del 2 al 5");
+		int numero = teclado.nextInt();
+		switch(numero) {
+			case 2:
+				System.out.println("Es un patito");
+				break;
+			case 3:
+				System.out.println("Es una serpiente");
+				break;
+			case 4:			//Con el 4 o el 5 ejecuta lo mismo
+			case 5:
+				System.out.println("Es una silla");
+				break;
+			default:
+				System.out.println("Ese número no esta entre el 2 y el 5");
+			}
+		*/
+		
+		
+		///Escribir un texto y que te lo de sin espacios.(Sin replace)
+		/*
+		Scanner teclado = new Scanner(System.in);
+		String texto = teclado.nextLine();
+		String sinEspacios="";
+		int contador = 0;
+		for(int i=0; i<texto.length(); i++)
+			if(texto.charAt(i) != ' ') {
+				sinEspacios = sinEspacios + texto.charAt(i);
+				}
+			else
+				contador++;
+		System.out.println(sinEspacios);
+		System.out.println("Número de espacios eliminados: "+contador);
+		teclado.close();
+		*/
+		
+		///Escribir un texto y que te lo de sin espacios.(Con replace)
+		/*
+		Scanner teclado = new Scanner(System.in);
+		String texto = teclado.nextLine();
+		String sinEspacios=texto.replace(" ","");
+		System.out.println(sinEspacios);
+		teclado.close();
+		*/
+		
+		///5.Escribir un programa que pida por teclado una cadena de texto y la imprima escrita al
+		///reves (es decir, si el usuario escribe Hola Mundo el programa debería de escribir
+		///odnuM aloH)
+		/*
+		Scanner teclado = new Scanner(System.in);
+		String texto = teclado.nextLine();
+		String reves= "";
+		for(int i=texto.length()-1; i>=0; i--) {
+				reves = reves + texto.charAt(i);		//reves+=texto.charAt(i);
+				}
+		System.out.println(reves);
+		teclado.close();
+		*/
+		
+		
+		///6.Escribir un programa que pida por teclado una cadena de texto y la separe en dos
+		///distintas. En la primera de ellas estarían las letras que ocupan una posición par y en la
+		///segunda las que ocupan una posición impar. Por ejemplo, si el usuario escribe Hola
+		///Mundo la primera cadena sería Hl ud y la segunda oaMno.
+		/*
+		Scanner teclado = new Scanner(System.in);
+		String texto = teclado.nextLine();
+		String par= "";
+		String impar= "";
+		for(int i=0; i<texto.length(); i++) {
+			if(i%2==0)
+				par+=texto.charAt(i);		//par = par + texto.charAt(i);
+			else
+				impar+=texto.charAt(i);
+				}
+		System.out.println("Pares= "+par+" Impares= "+impar);
+		teclado.close();
+		*/
+		
+		///8.Escribir un programa que reciba una cadena de texto por teclado y la muestre sin
+		///vocales. Por ejemplo, si recibe la cadena “Hola Mundo” debería de devolver “Hl Mnd”.
+		/*
+		Scanner teclado = new Scanner(System.in);
+		String texto = teclado.nextLine();
+		String sinVocales="";
+		for(int i=0;i<texto.length();i++) {
+			char c = texto.charAt(i);
+			if(c!='a' && c!='e' && c!='i' && c!='o' && c!='u')
+				sinVocales = sinVocales + texto.charAt(i);
+			}
+			System.out.println(sinVocales);
+		teclado.close();
+		*/
+		
+		
+		///Escribir un texto y te lo da en minusculas en una linea y en otra te lo da sin vocales.
+		/*
+		Scanner teclado = new Scanner(System.in);
+		String texto = teclado.nextLine();
+		String sinVocales ="";
+		String minusculas= texto.toLowerCase();
+		for(int i=0;i<texto.length();i++) {
+			char c = minusculas.charAt(i);
+			switch(c) {
+			case 'a':
+			case 'e':
+			case 'i':
+			case 'o':
+			case 'u':
+				break;
+			default:
+				sinVocales+=texto.charAt(i);
+				}
+			}
+			System.out.println("En minusculas= String numeros="";"+minusculas);
+			System.out.println("Sin vocales= "+sinVocales);
+		teclado.close();
+		*/
+		
+		
+		///10.Escribe un programa que valide si un NIF español introducido por teclado es correcto.
+		///La longitud exacta de la cadena ha de ser de 9 caractéres. Los ocho primeros han de
+		///ser números comprendidos entre el 0 y el 9 y el último una letra que puede estar
+		///escrita en mayúsculas o minúsculas.
+		/*
+		Scanner teclado = new Scanner(System.in);
+		String nif = teclado.nextLine();
+		String numeros="";
+		if (nif.length() == 9) {
+			for(int i=0;i<9;i++) {
+			numeros = nif.charAt(i);
+			System.out.print(numeros+" ");
+			}
+		}
+		else
+			System.err.println("Error");
+		*/											//Sin terminar
+		
+		
+		///Eliminar los espacios sobrantes 
+		/*
+		String dni = "   12345678Z    ";
+		System.out.println(dni);
+		dni = dni.trim();
+		System.out.println(dni);
+		 */
+		
+		
+		///1.Escribir un programa que pida un número por teclado y calcule su factorial. Como
+		///sabes, la factorial de un número se calcula multiplicando ese número por los
+		///sucesivos factores que obtenemos restando uno hasta llegar a la unidad. Por ejemplo,
+		///el factorial de 6 (que se representa así 6!) sería este:
+		/*
+		Scanner teclado = new Scanner(System.in);
+		double resultado=1;
+		double numero = teclado.nextInt();
+		for (double i=numero; i>0;i--) {
+			System.out.print(i+" ");
+			resultado *= i;
+			}
+		System.out.println("");
+		System.out.println("El resultado es: "+resultado);
+		teclado.close();
+		*/
+		
+		
+		///5.Escribir un programa que nos diga si un número es capicúa.
+		/*
+		Scanner teclado = new Scanner(System.in);
+		int numero = teclado.nextInt();
+		String txt_reversa ="";
+		String cadenatxt = Integer.toString(numero);		//String cadenatxt = String.valueOf(numero);
+		for(int i=cadenatxt.length() -1;i>=0;i--)
+			txt_reversa += cadenatxt.charAt(i);
+		if (cadenatxt.equals(txt_reversa) == true) {		//No hace falta poner el "== true"
+			System.out.println("EL número "+txt_reversa+" es capicúa");
+			}
+		else
+			System.out.println("El número no es capicúa");
+		teclado.close();
+		*/
+		
+		
+		///14.Escribe un programa que lea una hora por teclado en formato 24 horas (HH:MM). Tu
+		///programa debería de decir si corresponde a la mañana (entre las 6 y las 11, ambas
+		///inclusive), si es una hora de la tarde (entre las 12 y las 19, ambas inclusive), si es de la
+		///noche (entre las 20 y las 23, ambas inclusive), si es de la madrugada (entre las 0 y las
+		///5, ambas inclusive) o bien, si el formato no es correcto o no se corresponde con una
+		///hora real (minutos de mas de 60, horas negativas o por encima de 23, etc.
+		/*
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("Escribe la hora:");
+		String hora = teclado.nextLine();
+		teclado.close();
+		boolean formato = false;
+		int hh = Integer.parseInt(hora.substring(0,2));
+		int mm = Integer.parseInt(hora.substring(3,5));
+		if (hora.charAt(2)==':' && hora.length()==5) {
+			if (hh <= 24 && hh>= 0 && mm <= 60 && mm >= 0) {
+				formato = true;
+			}
+			else {formato = false;}
+		}
+		else {formato = false;}
+		if (formato == true) {
+			System.out.println("La hora es "+hora+" esta en un formato correcto");
+			if (hh >=0 && hh <=5) {
+				if (hh != 1) {
+					System.out.println("Son las "+hora+" de la madrugada");
+				}
+				else if (hh == 1)
+					System.out.println("Es la "+hora+" de la madrugada");
+			}
+			if (hh >=6 && hh <=11) {
+				System.out.println("Son las "+hora+" de la mañana");
+			}
+			if (hh >=12 && hh <=19) {
+				System.out.println("Son las "+hora+" de la tarde");
+			}
+			if (hh >=20 && hh <=23) {
+				System.out.println("Son las "+hora+" de la noche");
+			}
+		}
+		else
+			System.out.println("La hora no esta en el formato correcto ("+hora+")");
+		*/
+		
+		///Character classes.(Expresiones regulares)
+		///Regex Cheat Sheet
+		
+		
+		///Comprobar si el número de telefono tenga una coincidencia de un número del 6 al 8 seguido
+		///de otros 8 números que pueden estar entre el 0 y el 9. (Si hay numero de más tambien lo da 
+		///como válido)
+		/*
+		Pattern patron = Pattern.compile("[6-8][0-9]{8}");
+		Matcher coincidencia = patron.matcher("655334455");
+		
+		if(coincidencia.find() == true)
+			System.out.println("Es un número de telefono válido");
+		else
+			System.out.println("No es un número de telefono válido");
+		*/
+		
+		///Lo mismo pero más sencillo
+		/*
+		String telefono = "657356012";
+		if(telefono.matches("[6-8][0-9]{8}") == true)
+			System.out.println("Es un telefono válido");
+		else
+			System.out.println("No es un telefono válido");
+		*/
+		
+		///Comprobar si es un DNI.
+		/*
+		String dni = "52314455A";
+		if(dni.matches("[0-9]{8}[A-Z]"))
+			System.out.println("Es un DNI válido");
+		else
+			System.out.println("No es un DNI válido");
+		*/
+		
+		///Comprobar si es una matricula.
+		/*
+		Scanner teclado = new Scanner(System.in);
+		String matricula = teclado.nextLine();
+		teclado.close();
+		if(matricula.matches("[0-9]{4}[ ][A-Za-z &&[^AEIOUQaeiuoq]]{3}"))
+			System.out.println("Es una matricula válida");
+		else
+			System.out.println("No es una matricula válida");
+		*/
+		
+		///Escribir un número y que muestre si es primo y si no lo es que muestre el siguiente
+		///número primo.
+		/*
+		Scanner teclado = new Scanner(System.in);
+		int numero = teclado.nextInt();
+		boolean esPrimo;
+		do {
+			esPrimo = true;
+			int raiz = (int)Math.sqrt(numero) + 1;
+			for(int i =2; i<raiz; i++) {
+				if(numero%i == 0)
+					esPrimo = false;
+				}
+				if(esPrimo == false)
+					numero++;
+			}while(esPrimo == false);
+			System.out.println(numero + " es primo.");
+		teclado.close();
+		*/
+		
+		
+		
+		///6.Escribir un programa que muestre por pantalla los 50 primeros números primos, sus
+		///raíces cuadradas, sus cuadrados y sus cubos.
+		/*
+		int numero = 1;
+		boolean esPrimo;
+		for(int contador=0;contador<50;contador++) {
+		do {
+			esPrimo = true;
+			int raiz = (int)Math.sqrt(numero) + 1;
+			for(int i = 2; i<raiz; i++) {
+				if(numero%i == 0)
+					esPrimo = false;
+				}
+				if(esPrimo == false)
+					numero++;
+			}while(esPrimo == false);
+			double numeroRaiz = Math.sqrt(numero);
+			int cuadrado = numero * numero;
+			int cubo = cuadrado * numero;
+			System.out.println(numero + " - " + numeroRaiz + " - " + cuadrado + " - " + cubo);			
+			numero++;
+		}
+		*/
+		
+		///7.Decimos que dos números primos son gemelos cuando están separados por un único
+		///número (el 11 y el 13, el 17 y el 19, el 41 y el 43, etc.). Escribir un programa que calcule
+		///la primera pareja de primos gemelos por encima del 50.
+		/*
+		int numero = 50;
+		int anterior = 0;
+		boolean gemelosEncontrados = false;
+		while(gemelosEncontrados == false) {
+			boolean esPrimo;
+			for(int contador=0;contador<50;contador++) {
+				do {
+					esPrimo = true;
+					int raiz = (int)Math.sqrt(numero) + 1;
+					for(int i = 2; i<raiz; i++) {
+						if(numero%i == 0)
+							esPrimo = false;
+					}
+					if(esPrimo == false)
+						numero++;
+				}while(esPrimo == false);		
+				if(numero-anterior == 2)
+					gemelosEncontrados = true;
+				else {
+
+					anterior = numero;
+					numero++;
+					}
+			}
+			System.out.println(anterior+"- "+numero);
+		}
+		*/
+		
+		///Vectores
+		/*
+		int lista[] = new int[6];
+		String textos[] = new String[10];
+		int[] vector;
+		double[] notas1 = {7.5, 6, 9.4, 2.5 ,7.5};
+		lista[2] = 5;
+//		System.out.println(notas1[1]);
+		notas1[1] = 9.2;
+//		System.out.println(notas1[1]);
+		
+		int[][] matriz = new int[2][3];
+//		System.out.println(matriz[1][2]);	//Fila 1 Columna 2
+		
+		String[][] alumnos = {{"Ana","López"},{"Mario","Pérez"},{"Eva","Gutiérrez"}};
+//		System.out.println(alumnos[1][0]+" "+alumnos[1][1]);
+		
+/*		
+		String matricula = "124235";
+		if(matricula.matches
+						("[A-Z]?"				//(Puede tener 0 o 1)
+						+ "[A-Z]*"				//(Puede tener 0 o más)
+						+ "[A-Z]+"				//(Puede tener 1 o más)
+						+ "[A-Z]{3,}"			//(Puede aparecer un minimo de 3 veces)
+						+ "[A-Z]{3,8}"));		//(Puede aparecer un minimo de 3 veces
+												//y un maximo de 8 veces)	
+		
+			
+		
+		double[] notas = {7.5, 6, 9.4, 2.5 ,7.5};
+		
+		for(int posicion = 0;posicion<notas.length;posicion++) {
+			notas[posicion]+=2;
+		}
+		
+		for(int posicion = 0;posicion<notas.length;posicion++) {
+//			System.out.println(notas[posicion]);
+		}
+		
+		
+		String[] profes = {"Natalia","Víctor","Eduardo","Félix","José María"};
+		String[] profesNuevos;
+		profesNuevos = profes;
+//		profesNuevos = Arrays.copyOf(profes,profes.length+2);
+		for(int i=0;i<profesNuevos.length; i ++) {
+//			System.out.println(profesNuevos[i]);
+		}
+//		profesNuevos[3] = "Yago";
+		for(int i=0;i<profes.length; i ++) {
+//			System.out.println(i+" "+profes[i]);
+		}
+		
+		Arrays.sort(profes);
+		
+		for(String nombre: profes) {
+//			System.out.println(nombre);
+		}
+
+/*		if(profes.equals(profesNuevos)==true)
+			System.out.println("Son iguales");
+		else
+			System.out.println("No son iguales");
+*/		
+		
+/*		
+		int posicion = Arrays.binarySearch(profes, "Eduardo");
+		if(posicion >= 0)
+			profes[posicion] = "Gerardo";
+		else
+			System.out.println("No está en el array");
+		for(String nombre: profes)
+			System.out.println(nombre);
+*/	
+
+/*		
+		if(Arrays.binarySearch(profes, "Eduardo") < 0) {
+			System.out.println("No está en el array");
+		}
+		else
+			System.out.println("Está en el array");
+*/
+
+		
+		
+/*		Arrays.sort(notas);
+		for(double sysoNotas: notas) {
+		System.out.println(sysoNotas);
+		}
+*/	
+		
+/*		
+		int diasDelMes[] = new int[12];
+		Arrays.fill(diasDelMes, 30);
+
+//		for(int mes:diasDelMes)
+//			System.out.print(mes+", ");
+		
+		String texto = Arrays.toString(diasDelMes);
+		texto = texto.replace("[", "");
+		texto = texto.replace("]", "");
+		System.out.println(texto);
+*/		
+		
+		///1.Validar un código postal de Madrid. Cinco números, los dos primeros siempre son el 28
+		///Ejemplo: 28032
+		/*
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("Verificador de códigos postales:");
+		String postal = teclado.nextLine();
+		teclado.close();
+		if(postal.matches("[2][8][0-9]{3}"))
+			System.out.println("Es un código postal válido");
+		else
+			System.out.println("No es un código postal válido");		
+		*/
+		
+		///9.Escribir un programa que pida números entre el 1 y el 100 por teclado hasta que
+		///escribamos la palabra FIN (con mayúsculas). Si el usuario introduce una entrada
+		///inválida (números superiores a 100, otras cadenas de caracteres que no sean FIN, etc.)
+		///no se tendrá en cuenta pero se mostrará un mensaje de error y el programa seguirá
+		///su curso. Cuando terminamos (al introducir la palabra FIN, recuerda) mostraremos 
+		///por pantalla el numero de entradas válidas que hemos hecho (sin contar esta última
+		///que sólo sirve para finalizar el programa)
+		/*
+		boolean hemosAcabado = false;
+		Scanner teclado = new Scanner(System.in);
+		String patronNumerico = "[0-9]+";
+		int contador = 0;
+		do {
+		System.out.println("Escribe un número del 1 al 100 o 'FIN' para salir:");
+		String entrada = teclado.nextLine();
+			if(entrada.equals("FIN"))
+				hemosAcabado = true;
+			else if(entrada.matches(patronNumerico) == true) {
+				System.out.println("Es un número entrero");
+				int numero = Integer.parseInt(entrada);
+				if(numero >=1 && numero <=100)
+					contador++;
+				else
+					System.out.println("Pero no es un entero entre 1 y 100");
+				}
+			else
+				System.out.println("No es un número entero");
+			}while(hemosAcabado == false);
+				System.out.println("Número de veces que la entrada ha sido correcta: "contador);
+		teclado.close();
+		*/
+		
+		///Ordenarlo
+		/*
+		int[] numeros = {14, 145, 5, 23, 37, 1, 456, 44};
+		Arrays.sort(numeros);
+		*/
+		
+		///De mayor a menor
+		/*
+		for(int  i=numeros.length-1; i>=0;i--)
+			System.out.println(numeros[i]);
+		*/
+		
+		///De menor a mayor
+		/*
+		for (int n :numeros)
+			System.out.println(n);
+		*/
+		
+		///De menor a mayor
+		/*
+		for(int  i=0; i<numeros.length;i++)
+			System.out.println(numeros[i]);
+		*/
+		
+		///De mayor a menor en una nueva variable
+		/*
+		int[] nuevoArray = new int[numeros.length];
+		int j=0;
+		for(int i = numeros.length-1; i>=0; i--) {
+			nuevoArray[j] = numeros[i];
+			j++;
+		}
+		for(int n: nuevoArray)
+			System.out.println(n);
+		*/
+		
+		///1.Escribir un programa que genere seis números aleatorios entre el 1 y el 49 sin que
+		///ninguno de ellos esté repetido (simulando una lotería primitiva).
+		/*
+		int[] primitiva = new int[6];				//No funciona
+		boolean repetido = false;
+		for(int i=0;i<6;i++) {
+			int azar = (int)(Math.random()*10)+1;
+			for(int n: primitiva) {
+				if(n == azar)
+					repetido = true;
+			if(repetido == false)
+				primitiva[i] = azar;
+			}
+		}
+		for(int n:primitiva)
+			System.out.print(n+" ");
+		*/
+		
+		/*											//Lo hace pero no comprueba si estan repetidos
+		int[] primitiva = new int[6];
+		for(int i=0; i<6;i++) {
+			primitiva[i] =(int)(Math.random()*10)+1;
+			for(int n:primitiva) {
+				if(primitiva[i] == n) {
+				}
+			}
+		}
+		for(int n:primitiva)
+			System.out.println(n);
+		*/
+		
+		///Separar cada palabra en diferentes arrays 
+		/*
+		String texto1 = "En un lugar de      la Mancha de cuyo    nombre no quiero";
+		String[] palabras = texto1.split("[ ]+");
+		for(String palabra:palabras)
+			System.out.println(palabra);
+		*/
+		
+		///Quitar los espacios en blanco de delante y de detras.
+		/*
+		String texto = "   HOLA    ";
+		System.out.println(texto);
+		texto = texto.trim();
+		System.out.println(texto);
+		*/
+		
+		///Con un solo print mostrar dos textos uno en la línea de abajo del otro.
+		/*
+		System.out.println("Esto va en una línea\nY esto en la de abajo");
+		*/
+		
+		
+		///Impresión (print) con formtato.
+		/*
+		String nombre = "Jose Maria";
+		String apellidos = "Morales Vázquez";
+		int edad = 57;
+		double salario = 1345.678;
+		System.out.printf("Tu nombre es %s %s ,tienes %d y cobras %.2f euros.\n", nombre,apellidos , edad, salario);	//%s = un String	%d = un número entero	%f = un número con decimales (Se tienen que poner en orden)
+																														//%.2f = un número con decimales pero redondeandolo a dos decimales
+		System.out.println("\nFin del programa");
+		
+		int n1 = 345;
+		int n2 = 1245;
+		int n3 = 2;
+		int n4 = 32;
+		
+		System.out.printf("Ingresos:\n%5d€\n%5d€\n%5d€\n%5d€\n", n1,n2,n3,n4);		//%5d = un número entero y le suma ESPACIOS EN BLANCO hasta que sean 5 caracteres terminando los números a la DERECHA
+		System.out.printf("Ingresos:\n%-5d€\n%-5d€\n%-5d€\n%-5d€\n", n1,n2,n3,n4);	//%-5d = un número entero y le suma ESPACIOS EN BLANCO hasta que sean 5 caracteres terminando los números a la IZQUIERDA
+		System.out.printf("Ingresos:\n%05d€\n%05d€\n%05d€\n%05d€\n", n1,n2,n3,n4);	//%5d = un número entero y le suma CEROS hasta que sean 5 caracteres terminando los números a la DERECHA
+		
+		double d1 = -345.12;
+		double d2 = 1245.1;
+		double d3 = 2.0;
+		double d4 = -32.3456;
+		
+		System.out.printf("Ingresos:\n%(+9.3f€\n%(+9.3f€\n%(+9.3f€\n%(+9.3f€\n",d1,d2,d3,d4);	//el + significa que si el número esta en POSITIVO que lo ponga con un + delante
+																								//el ( significa que si el número esta en NEGATIVO que lo ponga entre parentesis.
+		*/
+		
+		///Que te pida por teclado cuantos caracteres quiere que muestre y cuantos decimales.
+		/*
+		double pi = 3.141592653;
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("¿Cuantos caracteres quieres que ocupe?");
+		String caracteres = teclado.nextLine();
+		System.out.println("¿Cuantas cifras decimales quieres que muestre?");
+		String decimales = teclado.nextLine();
+		teclado.close();
+		String formato = "%"+caracteres+"."+decimales+"f";
+		System.out.printf(formato, pi);
+		*/
+		
+		///Escribir un programa que genere de forma consecutiva tiradas de dados entre el 1 y 
+		///el 6, los dados tiene que coincidir y decir cuantas tiradas se han necesitado para que coincidan
+		///, el número de dados que tienen que coincidir lo decidirá el usuario mediante un scanner.
+		///Y al final que aparezca el porcentaje de apariciones que ha tenido cada número hasta que coincidieran.
+		/*
+		Scanner tcl = new Scanner(System.in);
+		System.out.println("Escribe el número de dados que tienen que coincidir: ");
+		int num_dados = tcl.nextInt();
+		tcl.close();
+		boolean iguales = false;
+		int intentos =0;
+		int[] respuesta = new int[num_dados];
+		int[] contador = new int[7];
+		do {
+			intentos++;
+		for(int i=0;i<num_dados;i++) {
+			int dado = (int)(Math.random()*6)+1;
+			respuesta[i] = dado;
+			contador[dado]++;
+			if(i == num_dados-1)
+				System.out.println(dado);
+			else
+				System.out.print(dado+" - ");
+			}
+		iguales = true;
+		for(int i=0;i<num_dados;i++) {
+			if(respuesta[0] !=respuesta[i]) {
+				iguales = false;
+			}
+		}
+		}while(iguales == false);
+		System.out.println("Has necesitado "+intentos+" tiradas.");
+		System.out.println();
+		for(int iu=1;iu<7;iu++) {
+			double porcentaje =(100.0*contador[iu])/(num_dados*intentos);
+			System.out.printf("El número "+iu+" ha salido un %.2f %%\n",porcentaje);
+			}
+		*/
+		
+		///Lo mismo que el anterior pero trucando el dado para que el número 6 tenga el doble de posibilidades de aparecer en cada tirada.
+		/*
+		Scanner tcl = new Scanner(System.in);
+		System.out.println("Escribe el número de dados que tienen que coincidir: ");
+		int num_dados = tcl.nextInt();
+		tcl.close();
+		boolean iguales = false;
+		int intentos =0;
+		int[] respuesta = new int[num_dados];
+		int[] contador = new int[7];
+		do {
+			intentos++;
+		for(int i=0;i<num_dados;i++) {
+			int dado = (int)(Math.random()*7)+1;
+			if(dado ==7)
+				dado = 6;
+			respuesta[i] = dado;
+			contador[dado]++;
+			if(i == num_dados-1)
+				System.out.println(dado);
+			else
+				System.out.print(dado+" - ");
+			}
+		iguales = true;
+		for(int i=0;i<num_dados;i++) {
+			if(respuesta[0] !=respuesta[i]) {
+				iguales = false;
+			}
+		}
+		}while(iguales == false);
+		System.out.println("Has necesitado "+intentos+" tiradas.");
+		System.out.println();
+		for(int iu=1;iu<7;iu++) {
+			double porcentaje =(100.0*contador[iu])/(num_dados*intentos);
+			System.out.printf("El número "+iu+" ha salido un %.2f %%\n",porcentaje);
+			}
+		*/
+		
+		///Un programa que te pida cuanto ha costado una cena y entre cuantas personas vais a pagar y que con esos datos te de el importe 
+		///que tiene que aportar cada persona a la cuenta. Si el importe o el número de personas es de 0 que salga un mensaje de error.
+		///Y que si sale una Exception que salga que ha ocurrido un error.
+		/*
+		Scanner teclado = new Scanner(System.in);
+		double coste=0;
+		int personas=0;
+		try {
+		System.out.println("¿Cuanto ha costado la cena?: ");
+		coste = teclado.nextDouble();
+		//teclado.nextLine(); 			//Para limpiar el buffer(Memoria) del teclado (el escaner con double A VECES falla y por eso lo de limpiarla)
+		System.out.println("¿Entre cuantas personas se divide la cuenta?: ");
+		personas = teclado.nextInt();
+		}catch(Exception e) {
+			System.err.println("Ha ocurrido un error");
+		} finally {						//Para que se ejecute lo siguente aunque salte la Exception.
+		teclado.close();
+		if(coste != 0 && personas != 0)
+			System.out.printf("Tocais a %.2f € por persona",coste/personas);
+		else
+			System.err.println("Ni el importe ni el número de personas pueden ser 0 o letras");
+		}
+		*/
+		
+		///La constante de kaprekar para los dígitos de cuatro cifras.
+		/*					//NO TERMINADO PERO FACILITO
+		int num=0;
+		boolean bien = true;
+		boolean hayDiferencias = false;
+		
+		do {
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("Escribe un número de cuatro digitos: ");
+		try {
+			num = teclado.nextInt();
+		} catch (Exception e) {
+			System.err.println("Eso no es un número entero");
+		} finally {
+			teclado.close();
+		}
+		String numLength = Integer.toString(num);
+		
+		if(numLength.length() !=4) {
+			System.out.println("Tu número no tiene 4 caracteres.");
+
+		}
+		else
+			bien = true;
+		
+		for(int i=1;i<4;i++) {
+			if(numLength.charAt(0)!= numLength.charAt(i))
+				hayDiferencias = true;
+		}
+		if(hayDiferencias == false && bien == true) {
+			System.out.println("Todos los caracteres son iguales");
+		}
+		else
+			bien = true;
+		} while(bien == false);
+		
+		boolean kaprekar = false;
+		int contador = 0;
+		do {
+			String numAsc ="";
+			String numDesc ="";
+			int[] numArray = new int[4];
+			String numStr = String.valueOf(num);;
+			for(int i=0;i<numArray.length;i++) {
+				numArray[i] = numStr.charAt(i);
+				numArray[i] -= 48;
+		}
+		Arrays.sort(numArray);
+		for(int i=0;i<numArray.length;i++) {
+			numAsc += numArray[i];
+		}
+		for(int i = numArray.length-1;i>=0;i--) {
+			numDesc += numArray[i];
+		}
+			int intNumAsc = Integer.parseInt(numAsc);
+			int intNumDesc = Integer.parseInt(numDesc);
+			int resultado= intNumDesc-intNumAsc;
+			System.out.println(numDesc+" - "+numAsc+" = "+resultado);
+			contador++;
+			if(resultado!=6174) {
+				num = resultado;
+			}
+			else
+				kaprekar = true;
+		}while(kaprekar == false);
+		if(hayDiferencias == true)
+		System.out.println("Ha neceistado "+contador+" operaciones.");
+		*/
+	
+		///Programación modular.
+		/*
+		public static void programacionModular(String[] args) {
+			muestraNumero(5);
+			int n=6;
+			muestraNumero(n);
+			String texto = creaLinea(5,'X');
+			System.out.println(texto);
+			texto = creaLinea(10,'E');
+			System.out.println(texto);
+		}
+		
+		public static void muestraNumero(int numero) {
+			System.out.println(numero);
+		}
+		
+		public static String creaLinea(int veces, char caracter) {
+			String cadena="";
+			for(int i=0;i<veces;i++)
+				cadena+=caracter;
+			return cadena;
+		}
+		*/
+	
+		///Comprobar si un array con números son primos o no son primos.
+		/*
+		public static void main(String[] args) {
+			int[] numeros = {7,13,56,77,2,56,84};
+			for(int n:numeros)
+				if(esPrimo(n)==true)
+				System.out.println(n+" es primo.");
+				else
+					System.out.println(n+" no es primo.");
+		}
+		public static boolean esPrimo(int numero) {
+			
+			boolean primo = true;
+			int raiz = (int)Math.sqrt(numero)+1;
+			if(numero%2!=0) {
+				for(int i=3;i<raiz && primo==true;i+=2)
+					if(numero%i==0)
+						primo = false;
+			}
+			else
+				primo = false;
+			return true;
+		}
+		*/
+		///Fin de la programación modular
+		
+		
+		///Kaprekar2
+		/*
+		Scanner teclado = new Scanner(System.in);
+		int entrada = 0;
+		String numTxt = "";
+		final int kaprekar = 6174;
+		boolean todoCorrecto = false;
+		int entrada1 = validarKaprekar();
+		teclado.close();
+		System.out.println("Pasos para obtener la constante de kaprekar a partir del número " + entrada1);
+		int contador = 0;
+		while (entrada1 != kaprekar) {
+			contador++;
+			int numDescendente = kaprekarDescendente(entrada1);
+			int numAscendente = kaprekarAscendente(entrada1);
+			entrada1 = numDescendente - numAscendente;
+			numTxt = Integer.toString(entrada1);
+			// Si el número resultante tiene menos de cuatro cifras
+			for (int i = numTxt.length(); i < 4; i++)
+				numTxt = "0" + numTxt;
+			System.out.println(numDescendente + " - " + numAscendente + " = " + entrada1);
+		}
+		System.out.println("Constante de kaprekar obtenida con " + contador + " operaciones");
+	}
+
+	public static int kaprekarAscendente(int entrada) {
+		
+	}
+
+	public static int kaprekarDescendente(int entrada) {
+		
+	}
+
+	public static int validarKaprekar() {
+		
+	}
+	*/
+		
+	
+		///Buscaminas 0.1
+		/*
+		final static int mina = 1;
+	public static void main(String[] args) {
+		int lado;
+		int minas;		
+		boolean correcto = false;
+		do {
+			Scanner teclado = new Scanner(System.in);
+			System.out.println("¿Cuantos lados quieres en el tablero?: ");
+			lado = teclado.nextInt();
+			System.out.println("¿Cuantas minas quieres en el tablero?: ");
+			minas = teclado.nextInt();
+			teclado.close();
+			if(minas<=lado*lado)
+				correcto=true;
+			else
+				System.err.println("El número de minas tiene que ser menor al numero de casillas disponibles.");
+		}while(correcto == false);
+		
+		int[][] tablero = new int[lado][lado];
+		colocarMinas(tablero, lado, minas);
+		mostrarTablero(tablero,lado);
+	}	
+	public static void mostrarTablero(int[][] tablero,int lado) {
+		for(int x=0;x<lado;x++) {
+			for(int y=0;y<lado;y++) {
+				System.out.print(tablero[x][y]+" ");
+			}
+			System.out.println();
+		}
+	}
+	public static void colocarMinas(int[][] tablero,int lado,int minas) {
+		int numMinas=0;
+		while(numMinas!=minas) {
+			int fila = (int)(Math.random()*lado);
+			int columna= (int)(Math.random()*lado);
+			if(tablero[fila][columna]==0) {
+				tablero[fila][columna] = mina;
+				numMinas++;
+			}
+		}
+		*/
+		
+		
+		
+		///7.Pide al usuario un número y crea un array de enteros de tantas posiciones como indique
+		///ese número. Rellénalo con números aleatorios entre el 10 y el 1000 y finalmente
+		///pregunta al usuario por la posición de la que quiere recuperar el valor. El programa
+		///mostrará el número de la posición indicada si esta existe y un error si tratamos de
+		///recuperar una posición que no existe (menor a 0 o mayor a la longitud del array).
+		/*
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("Escribe cuantas posiciones quieres que tenga el array: ");
+		try {
+			String tablaStr="";
+			int num = teclado.nextInt();
+			int tabla[] = new int[num];
+			for(int i=0;i<num;i++) {
+				tabla[i] = (int)(Math.random()*(1000-9))+10;
+			}
+			for(int i=0;i<num;i++) {
+				tablaStr = Arrays.toString(tabla);
+			}
+			tablaStr=tablaStr.replace("[","").replace("]","").replace(","," -");
+			System.out.println(tablaStr);
+			System.out.println("\nEscribe la posición del número a recuperar: ");
+			int posicion = teclado.nextInt();
+			int posicionR = posicion;
+			posicion--;
+			if(posicion<0 || posicion>=num)
+				System.err.println("Esa posición no se encuentra disponible.");
+			else
+				System.out.println("Posición "+posicionR+": "+tabla[posicion]);
+		}catch (InputMismatchException e) {
+			System.err.println("Debe ser un número entero.");
+		}catch (NegativeArraySizeException e) {
+			System.err.println("El número no es un entero positivo.");
+		}catch (Exception e) {
+			System.err.println("Ese caracter o grupo de caracteres no es valido.");
+		}finally {
+			teclado.close();
+		}
+		*/
+		
+		///Escribir un programa que nos pida una cadena por teclado y luego cuente cuantas
+		///palabras hay en ella con cuatro o más vocales diferentes. Por ejemplo, si introducimos
+		///la frase “Crisis constitucional por culpa del murcielago guineoecuatorial” Nos debería de
+		///decir que 3. Tendrías que tener en cuenta que las vocales pueden ir en mayúsculas o no
+		///y son la misma letra. Presupón que ninguna vocal va acentuada de ninguna forma.
+		/*
+		public static void main(String[] args) {
+			Scanner teclado = new Scanner(System.in);
+			System.out.println("Escribe una frase: ");
+			String entrada = teclado.nextLine();
+			teclado.close();
+			String[] lista = entrada.split(" ");
+			int contador = 0;
+			for( String palabra:lista) {
+				//System.out.println(palabra);
+				if(tieneCuatroOMasVocales(palabra))
+				 contador++;
+			}
+			System.out.println("Hay "+contador+" palabras con 4 o más vocales");
+		}
+		
+		public static boolean tieneCuatroOMasVocales(String p) {	//p = palabra
+			int cuentaVocales = 0;
+			boolean tieneCuatroVocales = false;
+			String[] letras = {"a","e","i","o","u"};
+			for(String letra:letras)
+				cuentaVocales+=buscaLetra(p,letra);
+			if(cuentaVocales >=4)
+				tieneCuatroVocales = true;
+			return tieneCuatroVocales;
+		}
+		
+		public static int buscaLetra(String p, String l) {
+			int hayLetra = 1;
+			if(p.indexOf(l) == -1)
+				hayLetra=0;
+			return hayLetra;
+		}
+		*/
+		
+		///1.Una matriz transpuesta es aquella en la que se intercambian filas por columnas. A
+		///continuación tienes dos ejemplos de una matriz y su transpuesta:
+		///
+		///Realiza un programa que dada una matriz almacenada en un array te calcule su transpuesta
+		///y la almacene en otro diferente. Tu programa debería, ademas, dibujar en consola las
+		///matrices de la siguiente forma:
+		/*
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("Largo:");
+		int largo=teclado.nextInt();
+		System.out.println("Ancho:");
+		int ancho=teclado.nextInt();
+		int[][] matriz = new int[largo][ancho];
+		int[][] traspuesta = new int[largo][ancho];
+		int cont1=1;
+		int cont2=1;
+		for(int x=0;x<largo;x++) {
+			for(int y=0;y<ancho;y++) {
+				matriz[x][y]=cont1;
+				cont1++;
+			}
+		}
+		for(int x=0;x<ancho;x++) {
+			for(int y=0;y<largo;y++) {
+				traspuesta[y][x]=cont2;
+				cont2++;
+			}
+		}
+		for(int x=0;x<largo;x++) {
+			System.out.print("|");
+			for(int y=0;y<ancho;y++) {
+				System.out.print(" "+matriz[x][y]+" ");
+			}
+			System.out.println("|");
+		}
+		System.out.println();
+		for(int x=0;x<largo;x++) {
+			System.out.print("|");
+			for(int y=0;y<ancho;y++) {
+				System.out.print(" "+traspuesta[x][y]+" ");
+			}
+			System.out.println("|");
+		}
+		*/
+		
+		///5.Escribe un programa que genere 100 números aleatorios comprendidos entre el 1 y 50
+		///(ambos inclusive) y, posteriormente, obtenga el mayor, el menor y el que mas veces se
+		///repite (y nos diga cuantas veces lo hace).
+		/*								//FALTA EL QUE MÁS VECES SE REPITE
+		int[] array = new int[100];
+		for(int i=0;i<100;i++) {
+			array[i] = (int)(Math.random()*50)+1;
+			System.out.print(array[i]+" ");
+		}
+		System.out.println();
+		Arrays.sort(array);
+		System.out.println("El menor: "+array[0]);
+		System.out.println("El mayor: "+array[99]);
+		*/
+		
+		///Escribe un programa que pida al usuario una contraseña y compruebe que cumple las
+		///siguientes condiciones.
+		///	a. Debe tener al menos 8 caracteres y no más de 20.
+		///	b. Debe tener al menos una letra mayúscula y una minúscula.
+		///	c. Debe de tener al menos un número
+		///	d. Debe tener un símbolo de entre los siguientes: _, -, !, ?, *
+		/*
+		Scanner teclado = new Scanner(System.in);
+		boolean boCaracteres = false;
+		boolean boMinus = false;
+		boolean boMayus = false;
+		boolean boNum = false;
+		boolean boSimbolo = false;
+		String contraseña ="";
+		String rContraseña = "";
+		String vContraseña = "";
+		boolean coinciden = false;
+		while(coinciden==false) {
+			do {
+				System.out.println("Requisitos para tu contraseña:");
+				System.out.println(
+						"\n a. Debe tener al menos 8 caracteres y no más de 20.\n"
+						+ " b. Debe tener al menos una letra mayúscula y una minúscula.\n"
+						+ " c. Debe de tener al menos un número\n"
+						+ " d. Debe tener un símbolo de entre los siguientes: _, -, !, ?, *\n"
+						+ "\nEscribe tu contraseña: ");
+				contraseña = teclado.nextLine();
+				vContraseña=contraseña;
+				//Comprobar caracteres
+				if(contraseña.length()<=20 && contraseña.length()>=8)
+					boCaracteres = true;
+				//Comprobar mayúsculas
+				Pattern patronMayus = Pattern.compile("[A-ZÑ]");
+				Matcher mayus = patronMayus.matcher(contraseña);
+				if(mayus.find() == true)
+					boMayus = true;
+				//Comprobar minúsculas
+				Pattern patronMinus = Pattern.compile("[a-zñ]");
+				Matcher minus = patronMinus.matcher(contraseña);
+				if(minus.find() == true)
+					boMinus = true;
+				//Comprobar número
+				Pattern patronNumero = Pattern.compile("[0-9]");
+				Matcher numero = patronNumero.matcher(contraseña);	
+				if(numero.find() == true)
+					boNum = true;
+				//Comprobar símbolo
+				Pattern patronSimbolo = Pattern.compile("[_,--,!,?,*]");
+				Matcher simbolo = patronSimbolo.matcher(contraseña);	
+				if(simbolo.find() == true)
+					boSimbolo = true;
+				if(boCaracteres==true && boMayus==true && boMinus==true && boNum==true && boSimbolo==true) {
+					System.out.println("Tu contraseña cumple con los requisitos.\n");
+					System.out.println("Vuelve a escribir tu contraseña: ");
+					rContraseña = teclado.nextLine();
+					if(rContraseña==vContraseña)
+						coinciden = true;
+					else
+						System.err.println("Las contraseñas no coinciden.");
+				}
+				else
+					System.err.println("Tu contraseña no cumple con los requisitos.");
+			}while(boCaracteres==false || boMayus==false || boMinus==false || boNum==false || boSimbolo==false);
+		}
+		System.out.println("\nLas contraseñas coinciden.");
+		teclado.close();
+		*/
+		
+		///Cifrado de PIN
+		/*
+		public static void main(String[] args) {
+			
+			///Cifrado de PIN
+				
+				Scanner teclado = new Scanner(System.in);
+				boolean cifras = false;
+				int pin=0;
+				try {
+				while(cifras==false){
+				System.out.println("Escribe un pin de 4 cifras: ");
+				pin = teclado.nextInt();
+					if(pin <0 || pin>9999) {
+						System.out.println("El número tiene que tener 4 cifras.");
+						cifras=false;
+					}
+					else
+						cifras=true;
+				}
+				String cadena[] = new String[4];
+				int posMain=0;
+				String codigo="";
+				for(int i=0;i<4;i++) {
+					codigo=cifrar(pin,posMain,codigo);
+					posMain++;
+					cadena[i]=codigo;
+					codigo="";
+				}
+				for(int i=0;i<4;i++)
+					System.out.println(cadena[i]);
+				}catch(Exception e) {
+					System.err.println("Debe ser un número entero.");
+				} finally {
+					teclado.close();
+				}
+			}
+			
+			public static String cifrar (int pin, int posMain, String codigo) {
+				String pinStr=Integer.toString(pin);
+				if(pinStr.length()<4) 
+					for(int i=pinStr.length();i<4;i++)
+					pinStr="0"+pinStr;
+				
+				int posicion;
+				for(int i=1;i<=10;i++) {
+					posicion=pinStr.charAt(posMain);
+					posicion-=48;
+					if (posicion==0)
+						codigo="XXXXXXXXX0";
+					else {
+						if(i==posicion)
+							codigo+="0";
+						else
+							codigo+="X";
+						}
+				}
+				return codigo;
+			}
+		*/
+		
+		
+		///1.Se denominan números amigos a dos números naturales diferentes relacionados de tal
+		///manera que la suma de los divisores propios de cada uno es igual al otro número.
+		///
+		///Un divisor propio de un número es un factor positivo de ese número que no sea el propio
+		///número. Por ejemplo, los divisores propios de 6 son 1, 2 y 3, pero no 6.
+		///
+		///El par más pequeño de números amigos es (220, 284), y son amigos porque los divisores
+		///propios de 220 son 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 y 110, de los cuales la suma es 284; y 
+		///los divisores propios de 284 son 1, 2, 4, 71 y 142, de los cuales la suma es 220
+		///Los primeros diez pares de números amigos son: (220, 284), (1184, 1210), (2620, 2924),
+		///(5020, 5564), (6232, 6368), (10744, 10856), (12285, 14595), (17296, 18416), (63020,
+		///76084) y (66928, 66992)
+		///
+		///Escribe una función que reciba dos números y devuelva un valor booleano que nos diga si
+		///son amgos o no.
+		/*
+		public static void main(String[] args) {
+			Scanner teclado = new Scanner(System.in);
+			int num1=0;
+			int num2=0;
+			try {
+			System.out.println("Escribe el primer número: ");
+			num1=teclado.nextInt();
+			System.out.println("Escribe el segundo número: ");
+			num2=teclado.nextInt();
+			if(sonAmigos(num1, num2))
+				System.out.println("Son amigos");
+			else
+				System.out.println("No son amigos");
+			} catch (Exception e) {
+				System.err.println("Deben ser un número entero.");
+			} finally {
+				teclado.close();
+			}
+		}
+		
+		public static boolean sonAmigos(int num1,int num2) {
+			boolean sonAmigosBool = false;
+			int suma1=0;
+			int suma2=0;
+			for(int i=num1;i>0;i--) {
+				if(num1%i==0)
+					suma1+=i;
+			}
+			suma1-=num1;
+			for(int i=num2;i>0;i--) {
+				if(num1%i==0)
+					suma2+=i;
+			}
+			suma2-=num2;
+			if(suma1==num2 && suma2==num1)
+				sonAmigosBool=true;
+			return sonAmigosBool;
+		}
+		*/
+		
+		///2.Un número perfecto o numero es un número entero positivo que es igual a la suma de sus
+		///divisores propios positivos excluyéndose a sí mismo. Dicho de otra forma, un número
+		///perfecto es aquel que es amigo de sí mismo.
+		///
+		///Así, 6 es un número perfecto porque sus divisores propios positivos son 1, 2 y 3; y 6 = 1 + 2 +
+		///3. Un divisor propio positivo de un número es un factor positivo de ese número que no sea el
+		///propio número. Por ejemplo, los divisores propios de 6 son 1, 2 y 3, pero no 6. Los siguientes
+		///números perfectos son 28, 496 y 8128.
+		///
+		///Escribe una función que reciba un número y nos devuelva un valor booleano diciendo si es
+		///perfecto o no. El número debe de recogerse por teclado y si no es un entero positivo se
+		///debería de informar al usuario y pedir otro hasta que sea correcto. Usa excepciones para ello
+		/*
+		public static void main(String[] args) {
+			Scanner teclado = new Scanner(System.in);
+			int num1=0;
+				try {
+					do {
+						System.out.println("Escribe un número: ");
+						num1=teclado.nextInt();
+					}while(num1<0);
+					if(sonAmigos(num1))
+						System.out.println("Es amigo de si mismo");
+					else
+						System.out.println("No es amigo de si mismo\n");
+				} catch (Exception e) {
+					System.err.println("Eso no es un número");
+				} finally {
+					teclado.close();	
+				}
+		}
+		public static boolean sonAmigos(int num1) {
+			boolean sonAmigosBool = false;
+			int suma1=0;
+			for(int i=num1;i>0;i--) {
+				if(num1%i==0)
+					suma1+=i;
+			}
+			suma1-=num1;
+			if(suma1==num1)
+				sonAmigosBool=true;
+			return sonAmigosBool;
+		}*/
+		
+		
+		///Objetos de fechas y horas.
+			/*
+			LocalDate hoy = LocalDate.now();
+			//System.out.println("La fecha de hoy: "+hoy);
+			
+			LocalTime ahora = LocalTime.now();
+			//System.out.println("La hora de ahora: "+ahora);
+			
+			//LocalDate cumple = LocalDate.of(1968, 10, 8);
+			//System.out.println(cumple);
+			
+			//LocalTime citaMedica = LocalTime.of(10,15);
+			//System.out.println(citaMedica);
+			
+			//ahora = ahora.plusHours(1);
+			//System.out.println("Dentro de una hora: "+ahora);
+			System.out.println("\nFecha y hora:");
+			LocalDateTime fechayhora = LocalDateTime.now();
+			System.out.println(fechayhora);
+			System.out.println("\nFormato1:");
+			DateTimeFormatter formato1 = DateTimeFormatter.ofPattern("dd-MM-yy");
+			String fechaConFormato = fechayhora.format(formato1);
+			System.out.println(fechaConFormato);
+			System.out.println("\nFormato2:");
+			DateTimeFormatter formato2 = DateTimeFormatter.ofPattern("dd/MM/yy");
+			fechaConFormato = fechayhora.format(formato2);
+			System.out.println(fechaConFormato);
+			System.out.println("\nFormato3: ");
+			DateTimeFormatter formato3 = DateTimeFormatter.ofPattern("dd MMMM yy");
+			fechaConFormato = fechayhora.format(formato3);
+			System.out.println(fechaConFormato);
+			System.out.println("\nFormato4: ");
+			DateTimeFormatter formato4 = DateTimeFormatter.ofPattern("HH:mm");
+			fechaConFormato = fechayhora.format(formato4);
+			System.out.println(fechaConFormato);
+			System.out.println("\nFormato5: ");
+			DateTimeFormatter formato5 = DateTimeFormatter.ofPattern("MMMM EEEE YYYY");
+			fechaConFormato = fechayhora.format(formato5);
+			System.out.println(fechaConFormato);
+			System.out.println("\nFormato6: ");
+			DateTimeFormatter formato6 = DateTimeFormatter.ofPattern("MMM E YYY");
+			fechaConFormato = fechayhora.format(formato6);
+			System.out.println(fechaConFormato);
+			System.out.println("\n------------------------------------");
+			String fechaTxt = "08/10/1968";
+			DateTimeFormatter formatoT = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+			LocalDate cumple = LocalDate.parse(fechaTxt, formatoT);
+			System.out.println("Cumpleaños: "+cumple+"\n");
+			if(cumple.isAfter(hoy))
+				System.out.println(cumple+" es posterior a "+hoy);
+			else
+				System.out.println(cumple+" no es posterior a "+hoy);
+			if(cumple.isBefore(hoy))
+				System.out.println(cumple+" es anterior a "+hoy);
+			else
+				System.out.println(cumple+" no es anterior a "+hoy);
+			if(hoy.isEqual(cumple))
+				System.out.println("Felicidades");
+			else
+				System.out.println("Todavia no es tu cumpleaños");
+			*/
+		
+		
+		///Crear listas de array
+		/*
+		//Crear una lista vacia
+				ArrayList<String> textos = new ArrayList<>();
+				ArrayList<Double> conDecimales = new ArrayList<>();
+				ArrayList<Integer> enteros = new ArrayList<>(List.of(1,2,3,4,5));
+				
+				//Crear una lista con contenido
+				ArrayList<Double> precios = new ArrayList<>(List.of(33.5,64.9,175.0));
+				ArrayList<String> alumnos = new ArrayList<>(List.of("Jaime","Adrián","Lucía","Óscar","Lucía"));
+				
+				//Añadir contenido dentro de una lista creada
+				textos.add("Hola mundo");
+				textos.add("Adios, adios");
+				conDecimales.add(9.5);
+				precios.add(23.12);
+				
+				System.out.println(alumnos);
+				System.out.println(precios);
+				System.out.println(textos);
+				System.out.println(conDecimales);
+				System.out.println(enteros);
+				System.out.println();
+				
+				//Devuelve el contenido de la posición 1 (La primera es la 0)
+				System.out.println(textos.get(1));
+				System.out.println(textos);
+				
+				//Devuelve el tamaño de la lista
+				System.out.println(textos.size());
+				
+				//Ver si un contenido esta dentro de la lista
+				if(alumnos.contains("Lucía"))
+					System.out.println("Está en la lista");
+				else
+					System.out.println("No está en la lista");
+				
+				//Nos devuelve la posición en la que se encuentra dentro de la lista
+				System.out.println(alumnos.indexOf("Lucía"));
+				//Si no se encuentra en la lista nos devuelve un -1
+				System.out.println(alumnos.indexOf("Pepe"));
+				//Nos devuelve la última posición en la que se encuentra dentro de la lista
+				System.out.println(alumnos.lastIndexOf("Lucía"));
+				
+				//Elimina la primera posición en la que se encuentra dentro de la lista
+				alumnos.remove("Lucía");
+				System.out.println(alumnos);
+				//Elimina el elemento que se encuentre en esa posición dentro de la lista
+				alumnos.remove(0);
+				System.out.println(alumnos);
+				//Si la operación falla nos devuelve un false
+				System.out.println(alumnos.remove("Pepe"));
+				//Eliminar un entero en vez del elemento en esa posición
+				enteros.remove((Integer)3);
+				System.out.println(enteros);
+				
+				//Vaciar una lista
+				enteros.clear();
+				if(enteros.isEmpty())
+					System.out.println("La lista está vacia");
+				
+				//Crear una copia exacta a una lista
+				ArrayList alumnos2 = (ArrayList) alumnos.clone();
+				System.out.println(alumnos2);
+				
+				//Crear una lista similar a una tupla (Es una lista la cual no se puede modificar)
+				List<Integer> tupla = new ArrayList<>(List.of(1,2,3,4,5,6,7));
+				
+				//Recorrer la lista
+				for(int i=0;i<alumnos.size();i++)
+					System.out.println(alumnos.get(i));
+		*/
+		
+		///HashSet array donde no se pueden repetir los elementos
+			/*
+			HashSet<String> alumnos = new HashSet<>();
+			HashSet<String> profesores = new HashSet<>(Arrays.asList("José María Morales","Yago Navarrete"));
+			System.out.println(alumnos);
+			System.out.println(profesores);
+			//Si el elemento no se encontraba en la lista lo añade y devuelve un true
+			alumnos.add("Alfonso Literario");
+			alumnos.add("Esteban Dolero");
+			alumnos.add("Penelope Ligro");
+			System.out.println(alumnos);
+			//Si el elemento ya se encontraba en la lista no lo añade al array y devuelve false
+			alumnos.add("Esteban Dolero");
+			System.out.println(alumnos);
+			if(alumnos.add("Esteban Dolero")==false) {
+				System.out.println("Ya estaba en la lista y no fue añadido");
+			}
+			if(alumnos.add("Paula Briceño")==true) {
+				System.out.println("No estaba en la lista y fue añadido");
+			}
+			if(alumnos.contains("Esteban Dolero")) {
+				System.out.println("Esta en el array");
+			} else {
+				System.out.println("No esta en el array");
+			}
+			int i=0;
+			for(String alumno:alumnos) {
+				if(i!=alumnos.size()-1)
+					System.out.print(alumno+", ");
+				else
+					System.out.println(alumno);
+				i++;
+			}
+			HashSet<Integer> numeros = new HashSet<>(Arrays.asList(1,1,4,5,6,1,2,3,4,5,5,6,7,3,9,2,5,6,1,6,9,0,1));
+			System.out.println(numeros);
+			//Asi se puede eliminar los elementos repetidos de un ArrayList mediante el HashSet
+			ArrayList<Integer> numerosArrayList = new ArrayList<>(List.of(1,1,4,5,6,1,2,3,4,5,5,6,7,3,9,2,5,6,1,6,9,0,1));
+			System.out.println("Esto es un ArrayList: "+numerosArrayList);
+			HashSet<Integer> numerosHashSet = new HashSet<>(numerosArrayList);
+			System.out.println("Esto en un HashSet: "+numerosHashSet);
+			numerosArrayList = new ArrayList<>(numerosHashSet);
+			System.out.println("Esto es un ArrayList: "+numerosArrayList);
+			//Si lo igualas no se crea un array nuevo, se crea una referencia. Si borras un elemento en un array se borra tambien en el otro
+			HashSet<Integer>otrosNumeros = numerosHashSet;
+			otrosNumeros.remove(5);
+			System.out.println(otrosNumeros);
+			System.out.println(numerosHashSet);
+			//Crea un array que hace referencia al array
+			HashSet<Integer>conjunto1 = numerosHashSet;
+			//Crea un array nuevo independiente del array copiado
+			HashSet<Integer>conjunto2 = new HashSet<>(numerosHashSet);
+			
+			//
+			//conjunto2.retainAll(conjunto1);
+			//conjunto2.addAll(conjunto1);
+			//
+			*/
+			
+		///COnversiones entre colecciones y arrays
+		/*
+		HashSet<Integer> conjuntoNumeros = new HashSet<>(Arrays.asList(1,44,55,67,77,23,15));
+		ArrayList<Integer> listaNumeros = new ArrayList<>(List.of(2,55,6,2,3,77,8,55,1,2,6));
+		int[] vector = {4,5,6,22,4,1,7,9};
+		
+		//De Array a ArrayList
+		ArrayList<Integer> vectorLista = new ArrayList<>();
+		for(int n:vector)
+			vectorLista.add(n);
+		System.out.println(vectorLista);
+		
+		//De Array a HashSet
+		HashSet<Integer> vectorConjunto = new HashSet<>();
+		for(int n:vector)
+			vectorConjunto.add(n);
+		System.out.println(vectorConjunto);
+		
+		//De ArrayList a Array
+		int[] vectorListaNumeros = new int[listaNumeros.size()];
+		int i=0;
+		for(int n:listaNumeros) {
+			vectorListaNumeros[i] = n;
+			i++;
+		}
+		int o=0;
+		for(int n:vectorListaNumeros) {
+			if (o<vectorListaNumeros.length-1)
+				System.out.print(n+", ");
+			else
+				System.out.println(n);
+			o++;
+		}
+		0
+		///De HashSet a Array
+		int[] vectorConjuntoNumeros = new int[]{1,44,55,67,77,23,15};
+		int j=0;
+		for(int n:conjuntoNumeros) {
+			vectorConjuntoNumeros[j] = n;
+			j++;
+		}
+		int l=0;
+		for(int n:vectorConjuntoNumeros) {
+			if (l<vectorConjuntoNumeros.length-1)
+				System.out.print(n+", ");
+			else
+				System.out.println(n);
+			l++;
+		}
+		
+		///Colecciones
+		
+		ArrayList<Integer> numeros = new ArrayList<Integer>();
+		ArrayList<String> alumnos = new ArrayList<String>();
+		
+		Collections.addAll(numeros, 44, 56, 1, 2, 55, 7 ,3 ,3 ,44, 2, 89, 120, 45, 6 );
+		Collections.addAll(alumnos, "Lucía", "Marcos", "Sara", "Alejandro");
+		
+		System.out.println("\nListas:");
+		System.out.println(numeros);
+		System.out.println(alumnos);
+		//Ordena de menos a mayor
+		System.out.println("\nLista ordenada de mayor a menor:");
+		Collections.sort(numeros);
+		Collections.sort(alumnos);
+		
+		System.out.println(numeros);
+		System.out.println(alumnos);
+		//Le da la vuelta a la lista
+		System.out.println("\nLa lista del reves");
+		Collections.reverse(numeros);
+		Collections.reverse(alumnos);
+		
+		System.out.println(numeros);
+		System.out.println(alumnos);
+		//Mezcla la lista de forma aleatorio
+		System.out.println("\nLa lista ordenada aleatoriamente:");
+		Collections.shuffle(numeros);
+		Collections.shuffle(alumnos);
+		
+		System.out.println(numeros);
+		System.out.println(alumnos);
+		//Devuelve el maximo de la lista
+		System.out.println("\nEl valor máximo de la lista");
+		System.out.println(Collections.max(numeros));
+		
+		//Devuelve el minimo de la lista
+		System.out.println("\nEl valor mínimo de la lista");
+		System.out.println(Collections.min(numeros));
+		
+		//Devuelve la frecuencia con la que sale el valor
+		System.out.println("\nEl número de veces que sale en la lista:");
+		System.out.println(Collections.frequency(numeros, 3));
+		
+		//Buscar un elemento en la lista	(Devuelve un negativo si no se encuentra en la lista)		IMPORTANTE: Solo funciona si la lista esta ordenada
+		System.out.println("La posición del valor:");
+		Collections.sort(numeros);
+		System.out.println(Collections.binarySearch(numeros, 7));
+		*/
+		
+		
+		///Diccionarios
+		/*
+				//Se componenen de "CLAVE" + "VALOR"
+				HashMap<String,Double> sueldos = new HashMap<>();
+				sueldos.put("José María Morales", 3567.44);
+				sueldos.put("Pepe Potamo", 1755.44);
+				sueldos.put("Inés Perado", 3454.00);
+				
+				System.out.println(sueldos);
+				
+				//Lo sustituye en vez de crear uno nuevo
+				sueldos.put("José María Morales", 4567.44);
+				
+				System.out.println(sueldos);
+				
+				String nombre = "Pepe Potamo";
+				
+				//sueldos.remove(nombre);
+				
+				
+				if(sueldos.containsKey(nombre))
+					System.out.printf("El sueldo de %s es %.2f\n",nombre, sueldos.get(nombre));
+				else
+					System.out.println("Esa clave no existe");
+				
+				for (Entry<String, Double> persona:sueldos.entrySet()) {
+					System.out.printf("%s: %.2f\n",persona.getKey(),persona.getValue());
+				}
+				
+				for(String persona: sueldos.keySet()) {
+					System.out.printf("%s\n",persona);
+				}
+				
+				for(String persona: sueldos.keySet()) {
+					System.out.printf("%s: %.2f\n",persona, sueldos.get(persona));
+				}
+				
+				for(Double sueldo: sueldos.values()) {
+					System.out.printf("%.2f\n",sueldo);
+				}
+				
+				sueldos.forEach((nombre2, sueldo2)-> System.out.println(nombre2+": "+sueldo2));
+				
+				
+				//Perfecto para modificar datos a la hora de recorrerlo
+				Iterator<Map.Entry<String,Double>> iterador = sueldos.entrySet().iterator();
+				while(iterador.hasNext()) {
+					Map.Entry<String,Double> persona = iterador.next();
+					System.out.printf("it- %s: %.2f\n",persona.getKey(),persona.getValue());
+				}
+				
+				//Forma simplificada de la de arriba
+				Iterator<String> iterador2 = sueldos.keySet().iterator();
+				while(iterador2.hasNext()) {
+					String nombre3 = iterador2.next();
+					System.out.printf("it2- %s: %.2f\n",nombre3,sueldos.get(nombre));
+				}
+		*/
+		
+		
+		///Lectura de ficheros de texto
+		/*
+		public static void metodo1() {
+			try {
+				
+				BufferedReader lector = new BufferedReader(new FileReader("/home/alumno/A/ficheros/metodo1"));
+				String linea;
+				while((linea = lector.readLine())!=null) {
+					System.out.println(linea);
+				}
+				
+				//Otra manera para recorrerlo
+				
+				String linea = lector.readLine();
+				do {
+					System.out.println(linea);
+					if(linea!=null)
+						linea=lector.readLine();
+				} while(linea!=null);
+				
+				
+				lector.close();
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+			
+		}
+		public static void metodo2() {
+			try {
+				
+				File fichero = new File("/home/alumno/A/ficheros/metodo1");
+				
+				Scanner lector = new Scanner(fichero);
+				String linea;
+				while(lector.hasNextLine()) {
+					linea=lector.nextLine();
+					System.out.println(linea);
+				}
+				
+				lector.close();
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+			
+		}
+		public static void metodo3() {
+			try {
+				
+				ArrayList<String> lineas;
+				Path fichero = Path.of("/home/alumno/A/ficheros/metodo1");
+				lineas = (ArrayList) Files.readAllLines(fichero);
+				
+				System.out.println(lineas);
+				
+			} catch(Exception e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		public static void metodo4() {
+			try {
+				
+				Path fichero = Path.of("/home/alumno/A/ficheros/metodo1");
+				String contenido = null;
+				
+				contenido=Files.readString(fichero);
+				System.out.println(contenido.replace("\n", " "));
+				
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+			
+		}
+		*/
+		//Ficheros binarios random (Por posicion)
+		/*
+		package FicherosPorPosicion;
+
+import java.io.RandomAccessFile;
+import java.util.HashMap;
+
+public class MainFicherosPorPosicion {
+	
+	//Variables finales
+	static final char 
+	charDeBorradoDeRegistro = '*';
+	static final int 
+	tamanyoNombre = 20, 
+	tamanyoRegistro = (tamanyoNombre * 2) + 4;	// * 2 porque un char ocupa 2 bytes y  + 4 porque un int ocupa 4 bytes
+	
+	public static void main(String[] args) {
+		
+		///Acceso aleatorio a un fichero (No es aleatorio)
+		String ruta = "/home/alumno/A/ficheros/agenda.dat";
+		HashMap<String, Integer> agenda = new HashMap<>();
+		agenda.put("Alejandro", 33);
+		agenda.put("Luis", 24);
+		agenda.put("Ana", 32);
+		agenda.put("Elvira", 41);
+		try {
+			crearAgenda(ruta,agenda);
+			//leerRegistro(ruta,2);
+			//leerRegistro(ruta,3);
+			//modificarRegistro(ruta,2,"Manolo",33);
+			//leerRegistro(ruta,2);
+			//nuevoRegistro(ruta,"José Antonio", 56);
+			//leerRegistro(ruta,5);
+			//borrarRegistro(ruta,5);
+			leerTodosLosRegistros(ruta);
+			
+		} catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	public static void borrarRegistro(String ruta, int registro) throws Exception{
+		try(RandomAccessFile raf = new RandomAccessFile(ruta,"rw")){
+			long posicion = tamanyoRegistro * (registro-1);
+			if(posicion>=raf.length()) {
+				System.out.println("El registro "+registro+" no existe.");
+				System.out.println("El registro más alto es el "+raf.length()/tamanyoRegistro);
+			} else {
+				raf.seek(posicion);
+				if(raf.readChar()==charDeBorradoDeRegistro) 
+					System.out.println("El registro "+registro+" ya ha sido borrado.");
+				else {
+					raf.seek(posicion);
+					raf.writeChar(charDeBorradoDeRegistro);
+					System.out.printf("Registro %d borrado correctamente\n", registro);
+				}
+			}
+		}
+	}
+	
+	public static void leerTodosLosRegistros(String ruta) throws Exception{
+		try(RandomAccessFile raf = new RandomAccessFile(ruta,"r")){
+			System.out.println(" - TODOS LOS REGISTROS - ");
+			for(int i=0;i<raf.length()/tamanyoRegistro;i++) {
+				//raf.seek(tamanyoRegistro * i);					///Linea no necesaria
+				String nombre = leerNombre(raf);
+				int edad = raf.readInt();
+				if(nombre.charAt(0) == charDeBorradoDeRegistro == false) {
+					System.out.printf("Registro %d | Nombre : %-20s | Edad : %d\n",i+1, nombre, edad);
+				}
+			}
+		}
+	}
+	
+	public static void nuevoRegistro(String ruta, String nombre, int edad) throws Exception{
+		try(RandomAccessFile raf = new RandomAccessFile(ruta,"rw")){
+			raf.seek(raf.length());
+			escribirNombre(raf, nombre);
+			raf.writeInt(edad);
+			System.out.println("Registro creado con exito");
+		}
+	}
+	
+	public static void crearAgenda(String ruta, HashMap<String, Integer> agenda)  throws Exception{
+		//"r" = modo para leer
+		//"rm" = modo para leer y escribir
+		//"rwd" y "rws" = modo escritura lectura directamente en el disco (Más segura pero más lenta)
+		///Si el fichero no existe se crea y si existe respeta el contenido ya existente
+		try(RandomAccessFile raf = new RandomAccessFile(ruta,"rw")){
+			for(String nombre: agenda.keySet()) {
+				int edad = agenda.get(nombre);
+				escribirNombre(raf,nombre);
+				raf.writeInt(edad);
+			}
+			System.out.println("Agenda creada. Tamaño: "+raf.length()+" bytes.");
+		}
+	}
+	
+	public static void escribirNombre(RandomAccessFile raf, String nombre) throws Exception{
+		char[] chars = new char[tamanyoNombre];
+		for(int i=0;i<tamanyoNombre;i++) {
+			if(i<nombre.length())
+				chars[i] = nombre.charAt(i);
+			else
+				chars[i] = ' ';
+		}
+		for(char c: chars)
+			raf.writeChar(c);
+	}
+	
+	public static void leerRegistro(String ruta, int registro) throws Exception{
+		try(RandomAccessFile raf = new RandomAccessFile(ruta,"r")){
+			long posicion = tamanyoRegistro * (registro-1);
+			if(posicion>=raf.length()) {
+				System.out.println("El registro "+registro+" no existe.");
+				System.out.println("El registro más alto es el "+raf.length()/tamanyoRegistro);
+			} else {
+				raf.seek(posicion);
+				String nombre = leerNombre(raf);
+				if(nombre.charAt(0) == charDeBorradoDeRegistro == false) {
+					int edad = raf.readInt();
+					System.out.printf("Registro %d | Nombre : %-20s | Edad : %d\n",i+1, nombre, edad);
+				} else
+					System.out.printf("Registro %d marcado para borrar\n", registro);
+			}
+		}
+	}
+	
+	public static String leerNombre(RandomAccessFile raf) throws Exception{
+		String nombre = ""; 
+		for(int i=0;i<tamanyoNombre;i++) {
+			char c = raf.readChar();
+			nombre = nombre + c;
+		}
+		return nombre.trim();	//trim devuelve el nombre sin espacios en blanco
+	}
+	
+	public static void modificarRegistro(String ruta, int registro, String nombre, int edad) throws Exception{
+		try(RandomAccessFile raf = new RandomAccessFile(ruta,"rw")){
+			long posicion = tamanyoRegistro * (registro-1);
+			if(posicion>=raf.length()) {
+				System.out.println("El registro "+registro+" no existe.");
+				System.out.println("El registro más alto es el "+raf.length()/tamanyoRegistro);
+			} else {
+				raf.seek(posicion);
+				if(raf.readChar() == charDeBorradoDeRegistro == false) {
+					raf.seek(posicion);
+					escribirNombre(raf, nombre);
+					raf.writeInt(edad);
+					System.out.printf("Registro %d modificado correctamente\n", registro);
+				} else
+					System.out.printf("Registro %d marcado para borrar\n", registro);
+			}
+		}
+	}
+	
+	
+}
+		*/
+		
+		///Base de datos
+		/*
+		String usuario = "admin";
+		String password = "1234";
+		String server = "jdbc:mysql://localhost:3306/sakila";
+		
+		try(Connection conexion = DriverManager.getConnection(server, usuario, password)) {
+			System.out.println("Conexión realizada con éxito");
+			
+			//Se puede reutilizar todas las veces que quieras
+			///Statement query = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+			
+			//El ResultSet por defecto solo puede ir hacia delante (ResultSet.TYPE_FORWARD_ONLY) y datos de solo lectura (ResultSet.CONCUR_READ_ONLY)
+			///Statement query = conexion.createStatement();
+			
+			//Realizar una consulta
+			///String consulta = "SELECT * FROM actor WHERE first_name = 'MARY'";
+			///ResultSet resultado = query.executeQuery(consulta);
+			
+			//Modificar un registro en concreto (Update)
+			
+			///resultado.absolute(67);
+			///resultado.updateString("first_name", "Inés");
+			///resultado.updateString("last_name", "Perado");
+			
+			//Para aplicar los cambios
+			///resultado.updateRow();
+			
+			//Realizar una consulta preparada (Con datos que puedan variar) (Al dato que cambia se le pone como una ?)
+			PreparedStatement query = conexion.prepareStatement("SELECT * FROM actor WHERE first_name = ? AND last_name = ?", ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			query.setString(1, "Mary");
+			query.setString(2, "Keitel");
+			ResultSet resultado = query.executeQuery();
+			
+			//Recorrer la consulta
+			resultado.afterLast();
+			while(resultado.previous()) {
+				//Dentro del get puede referenciarse al nombre de la columna o a la poscición de esta en la consulta (query).
+				System.out.printf(" - Actor %4d: %s %s\n", resultado.getInt("actor_id"), resultado.getString("first_name"), resultado.getString("last_name"));
+			}
+			//Mueve el puntero a la siguiente
+			///resultado.next();
+			//Mueve el puntero a la anterior
+			///resultado.previous();
+			//Mueve el puntero al primero
+			///resultado.first();
+			//Mueve el puntero al último
+			///resultado.last();
+			//Devuelve el número de la fila en la que se encuentra el puntero
+			///resultado.getRow();
+			//Mueve el puntero antes del primero
+			///resultado.beforeFirst();
+			//Mueve el puntero despues del último
+			///resultado.afterLast();
+			//Mueve el puntero a la posición especificada (La primera poscición es el 1)
+			///resultado.absolute(1);
+			//Mueve el puntero a una posición en base a la posición en la que se encuetra el puntero actualmente (Si esta en la posición 1 y le especificas 4 se mueve a la 5)
+			///resultado.relative(4);
+			
+			
+			///conexion.close();
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		*/
+		
+		///Base de Datos
+		///Pregunta por un nombre y te los muestra
+		/*
+		public static void consultaSakila() {
+			//Nombre para la consulta
+			String nombre = preguntarNombre();
+			
+			//Datos de la Base de Datos	
+			String usuario = "admin";
+			String password = "1234";
+			String server = "jdbc:mysql://localhost:3306/sakila";
+			
+			try(Connection conexion = DriverManager.getConnection(server, usuario, password)) {
+				
+				PreparedStatement query = conexion.prepareStatement("SELECT * FROM actor WHERE first_name = ?", ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+				query.setString(1, nombre);
+				ResultSet resultado = query.executeQuery();
+				
+				resultado.beforeFirst();
+				while(resultado.next()) {
+					System.out.printf("ID: %d Nombre: %s %s \n",resultado.getInt("actor_id"), resultado.getString("first_name"), resultado.getString("last_name"));
+				}
+				
+			} catch(SQLException e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		
+		public static String preguntarNombre() {
+			System.out.print("Nombre de quien ubicar: ");
+			Scanner teclado = new Scanner(System.in);
+			String nombre = teclado.nextLine();
+			return nombre;
+		}
+		*/
+		
+	}
+}

@@ -1,0 +1,5 @@
+package Interfaces;
+
+public interface Juvilada {
+	int EDAD_JUVILACION = 67;
+}

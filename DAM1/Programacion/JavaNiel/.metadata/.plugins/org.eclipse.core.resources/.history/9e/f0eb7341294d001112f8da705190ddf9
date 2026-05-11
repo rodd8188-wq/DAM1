@@ -1,0 +1,59 @@
+package Boletin27Daniel;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		ArrayList<Pokemon> pokemons = recuperarPokemons();
+		
+	}
+	
+	public static ArrayList<Pokemon> recuperarPokemons() {
+		ArrayList<Pokemon> pokemons = new ArrayList<>();
+		//Datos de la Base de Datos	
+		String usuarioDB = "admin";
+		String passwordDB = "1234";
+		String serverDB = "jdbc:mysql://localhost:3306/pokemondb";
+		
+		try(Connection conexion = DriverManager.getConnection(serverDB, usuarioDB, passwordDB)) {
+			System.out.println("Conexión realizada con éxito");
+			
+			Statement query = conexion.createStatement(
+					ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			
+			String consulta =
+					"SELECT "
+					+ "pokemon.numero_pokedex, "
+					+ "pokemon.nombre, "
+					+ "pokemon.peso, "
+					+ "pokemon.altura, "
+					+ "tipo.nombre "
+					+ "FROM pokemon "
+					+ "JOIN pokemon_tipo USING(numero_pokedex) "
+					+ "JOIN tipo USING(id_tipo); ";
+			ResultSet resultado = query.executeQuery(consulta);
+			//Recorrer la consulta
+			resultado.beforeFirst();
+			while(resultado.next()) {
+				new Pokemon(resultado.getInt(0),
+						resultado.getString(1),
+						resultado.getDouble(2),
+						resultado.getDouble(3),
+						resultado.getString(4));
+			}
+			
+		} catch(SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return pokemons;
+	}
+
+}
