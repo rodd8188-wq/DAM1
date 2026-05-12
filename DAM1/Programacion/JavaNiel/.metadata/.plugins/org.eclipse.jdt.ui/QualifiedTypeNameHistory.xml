@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
-    <fullyQualifiedTypeName name="java.util.regex.Pattern"/>
-    <fullyQualifiedTypeName name="java.util.regex.Matcher"/>
     <fullyQualifiedTypeName name="com.sun.tools.classfile.CharacterRangeTable_attribute"/>
     <fullyQualifiedTypeName name="CentroMedico.CentroMedico"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
@@ -19,7 +16,6 @@
     <fullyQualifiedTypeName name="java.awt.LayoutManager"/>
     <fullyQualifiedTypeName name="java.time.Period"/>
     <fullyQualifiedTypeName name="jdk.internal.misc.FileSystemOption"/>
-    <fullyQualifiedTypeName name="java.lang.Math"/>
     <fullyQualifiedTypeName name="Paqueteria.Localizacion"/>
     <fullyQualifiedTypeName name="Paqueteria.Paquete"/>
     <fullyQualifiedTypeName name="Paqueteria.Camioneta"/>
@@ -54,4 +50,14 @@
     <fullyQualifiedTypeName name="Boletin27Daniel.Pokemon"/>
     <fullyQualifiedTypeName name="java.util.Collections"/>
     <fullyQualifiedTypeName name="Interfaces.Persona"/>
+    <fullyQualifiedTypeName name="Lambdas.Operacion"/>
+    <fullyQualifiedTypeName name="Lambdas.OtraOperacion"/>
+    <fullyQualifiedTypeName name="java.lang.FunctionalInterface"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="java.lang.Runnable"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.CopyOnWriteArrayList"/>
+    <fullyQualifiedTypeName name="java.util.function.Consumer"/>
+    <fullyQualifiedTypeName name="java.util.function.Supplier"/>
+    <fullyQualifiedTypeName name="java.util.function.BiFunction"/>
+    <fullyQualifiedTypeName name="java.util.function.Function"/>
 </qualifiedTypeNameHistroy>

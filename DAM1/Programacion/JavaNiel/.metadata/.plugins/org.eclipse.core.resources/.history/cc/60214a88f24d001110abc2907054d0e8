@@ -1,0 +1,31 @@
+package Lambdas;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// Función lambda
+		Operacion suma = (a,b) -> a + b;
+		// Otra función
+		Operacion mayor = (a,b) -> {
+			int mayo = a;
+			if(b > a)
+				mayo = b;
+			return mayo;
+		};
+		//System.out.println(suma.ejecutar(5, 3));
+		//System.out.println(mayor.ejecutar(5, 3));
+		
+		OtraOperacion calcularPrecioSinIva = (a,b) -> {
+			double precio = a;
+			double iva = b;
+			double precioIva = a * 100 / b;
+			precioIva = precio - precioIva;
+			return "PVP: " + precioIva + "€";
+		};
+		
+		System.out.println(calcularPrecioSinIva.ejecutar(14.5, 10.0));
+		
+		
+		
+	} // Cierre main
+} // Cierre class

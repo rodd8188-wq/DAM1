@@ -1,0 +1,11 @@
+package Lambdas;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// Función lambda
+		Operacion suma = (a,b) -> a + b;
+		
+	}
+
+}

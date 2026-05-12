@@ -1,0 +1,57 @@
+package Lambdas;
+
+import java.util.function.Consumer;
+import java.util.function.Supplier;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// Función lambda
+		Operacion suma = (a,b) -> a + b;
+		// Otra función
+		Operacion mayor = (a,b) -> {
+			int mayo = a;
+			if(b > a)
+				mayo = b;
+			return mayo;
+		};
+		System.out.println(suma.ejecutar(5, 3));
+		System.out.println(mayor.ejecutar(5, 3));
+		
+		OtraOperacion calcularPrecioSinIva = (a,b) -> {
+			double precioIva = a - (a / 100 * b);
+			return "PVP: " + precioIva + "€";
+		};
+		
+		System.out.println(calcularPrecioSinIva.ejecutar(14.5, 10.0));
+		
+		
+		// Interfaces lambda creadas por JAVA
+		
+		// No recibe ni devuelve nada
+		Runnable hola = () -> System.out.println("Hola mundo");
+		Runnable adios = () -> System.out.println("Hasta la próxima");
+		
+		// Recibe un valor de cualquier tipo y no devuelve nada
+		Consumer<String> saludo = (nombre) -> System.out.println("Hola " + nombre);
+		Consumer<Integer> jubilacion = (edad) ->{
+			if(edad >= 67)
+				System.out.println("Tas jubilado macho");
+			else
+				System.out.println("Te faltan "+ (67 - edad) + "años.");
+		};
+		
+		// No recibe nada y devuelve un valor
+		Supplier<Integer> generarAleatorio = () -> {
+			return (int)(Math.random()*(6-0+1));
+		};
+		
+		hola.run();
+		adios.run();
+		
+		saludo.accept("Daniel");
+		
+		jubilacion.accept(70);
+		
+	} // Cierre main
+} // Cierre class
