@@ -44,6 +44,7 @@ public class Main {
 		// No recibe nada y devuelve un valor
 		Supplier<Integer> generarAleatorio = () -> (int)(Math.random()*6)+1;
 		
+		
 		hola.run();
 		adios.run();
 		
