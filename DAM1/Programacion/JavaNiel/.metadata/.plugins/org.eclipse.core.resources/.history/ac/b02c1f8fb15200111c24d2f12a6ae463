@@ -1,0 +1,34 @@
+package Boletin28DanielEjercicio2;
+
+abstract class Personaje {
+	// Atributos
+	protected int nivel = 1;
+	protected final static int 
+		fuerza = 0,
+		destreza = 1, 
+		inteligencia = 2,
+		constitucion = 3,
+		magia = 4,
+		carisma = 5;
+	protected int[] atributo = new int[6];
+	
+	public Personaje() {
+		generarAtributosAleatorios();
+	}
+	
+	protected void generarAtributosAleatorios() {
+		for(int i = 0; i<6; i++) {
+			atributo[i] = (int)(Math.random()*(15-5+1))+5;
+		}
+	}
+	
+	public void mostrarAtributos() {
+		System.out.println(
+				"Fuerza: "+ this.atributo[fuerza] + "\n" +
+				"Destreza: "+ this.atributo[destreza] + "\n" +
+				"Inteligencia: "+ this.atributo[inteligencia] + "\n" +
+				"Constitucion: "+ this.atributo[constitucion] + "\n" +
+				"Magia: "+ this.atributo[magia] + "\n" +
+				"Carisma: "+ this.atributo[carisma]);
+	}
+}

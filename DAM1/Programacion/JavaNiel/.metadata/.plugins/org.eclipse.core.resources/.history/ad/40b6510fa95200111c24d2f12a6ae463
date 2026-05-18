@@ -1,0 +1,5 @@
+package Boletin28DanielEjercicio1;
+
+public interface Interfaz {
+
+}

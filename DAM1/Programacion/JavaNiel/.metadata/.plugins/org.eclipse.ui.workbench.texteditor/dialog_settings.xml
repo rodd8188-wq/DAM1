@@ -5,6 +5,7 @@
 		<item key="replaceBarOpen" value="false"/>
 		<list key="findhistory">
 			<item value="random"/>
+			<item value="case"/>
 		</list>
 	</section>
 </section>

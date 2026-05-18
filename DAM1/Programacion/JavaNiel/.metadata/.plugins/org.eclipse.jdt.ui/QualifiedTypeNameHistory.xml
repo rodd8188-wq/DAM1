@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.sun.tools.classfile.CharacterRangeTable_attribute"/>
-    <fullyQualifiedTypeName name="CentroMedico.CentroMedico"/>
-    <fullyQualifiedTypeName name="java.util.Arrays"/>
-    <fullyQualifiedTypeName name="Examen2.JefeProyecto"/>
-    <fullyQualifiedTypeName name="Examen2.Programador"/>
-    <fullyQualifiedTypeName name="Examen2.Examen2Pool"/>
-    <fullyQualifiedTypeName name="java.util.HashMap"/>
-    <fullyQualifiedTypeName name="java.util.Map"/>
-    <fullyQualifiedTypeName name="java.util.Map.Entry"/>
     <fullyQualifiedTypeName name="ProyectoFut.Competicion"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="java.time.LocalDate"/>
@@ -52,7 +43,6 @@
     <fullyQualifiedTypeName name="Interfaces.Persona"/>
     <fullyQualifiedTypeName name="Lambdas.Operacion"/>
     <fullyQualifiedTypeName name="Lambdas.OtraOperacion"/>
-    <fullyQualifiedTypeName name="java.lang.FunctionalInterface"/>
     <fullyQualifiedTypeName name="java.lang.Math"/>
     <fullyQualifiedTypeName name="java.lang.Runnable"/>
     <fullyQualifiedTypeName name="java.util.concurrent.CopyOnWriteArrayList"/>
@@ -60,4 +50,14 @@
     <fullyQualifiedTypeName name="java.util.function.Supplier"/>
     <fullyQualifiedTypeName name="java.util.function.BiFunction"/>
     <fullyQualifiedTypeName name="java.util.function.Function"/>
+    <fullyQualifiedTypeName name="Boletin28DanielEjercicio1.Interfaz"/>
+    <fullyQualifiedTypeName name="Boletin28DanielEjercicio2.Druida"/>
+    <fullyQualifiedTypeName name="Boletin28DanielEjercicio2.Personaje"/>
+    <fullyQualifiedTypeName name="java.lang.FunctionalInterface"/>
+    <fullyQualifiedTypeName name="jdk.internal.org.jline.reader.impl.history.DefaultHistory"/>
+    <fullyQualifiedTypeName name="Boletin28DanielEjercicio2.Paladin"/>
+    <fullyQualifiedTypeName name="Boletin28DanielEjercicio2.Guerrero"/>
+    <fullyQualifiedTypeName name="Boletin28DanielEjercicio2.Asesino"/>
+    <fullyQualifiedTypeName name="Boletin28DanielEjercicio2.Mago"/>
+    <fullyQualifiedTypeName name="Boletin28DanielEjercicio2.Ladron"/>
 </qualifiedTypeNameHistroy>

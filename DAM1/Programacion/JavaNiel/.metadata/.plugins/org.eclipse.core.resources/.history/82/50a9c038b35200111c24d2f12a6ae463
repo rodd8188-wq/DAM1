@@ -1,0 +1,10 @@
+package Boletin28DanielEjercicio2;
+
+public interface Ladron {
+	public static boolean Sigilo(Personaje p) {		//Destreza(1)
+		
+		
+		
+		return true;
+	}
+}

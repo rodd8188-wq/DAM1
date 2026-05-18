@@ -1,0 +1,26 @@
+package Boletin28DanielEjercicio1;
+
+import Lambdas.Operacion;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Interfaz descuento = (precio, tipo) -> {
+			double resultado;
+			switch(tipo){
+				case 1:
+					return precio - 10.0;
+				case 2:
+					return precio - (precio / 100.0 * 20.0);
+				case 3:
+					return precio;
+				default:
+					return -1;
+			}
+		};
+		
+		System.out.println(descuento.aplicar(100, 2));
+	}
+
+}

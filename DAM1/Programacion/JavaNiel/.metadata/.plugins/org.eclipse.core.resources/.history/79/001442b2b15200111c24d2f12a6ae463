@@ -1,0 +1,7 @@
+package Boletin28DanielEjercicio2;
+
+public interface Guerrero {
+	public static int golpear(Personaje p1) {
+		return p1.atributo[0];
+	}
+}

@@ -1,0 +1,12 @@
+package Boletin28DanielEjercicio2;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Mago mago1 = new Mago();
+		
+		mago1.mostrarAtributos();
+	}
+
+}
