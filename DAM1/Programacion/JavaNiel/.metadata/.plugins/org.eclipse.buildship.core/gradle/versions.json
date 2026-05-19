@@ -1,7 +1,7 @@
 [ {
-  "version" : "9.6.0-20260516003721+0000",
-  "buildTime" : "20260516003721+0000",
-  "commitId" : "58b2728482ab7083d30842c2eaffc22941075ba0",
+  "version" : "9.6.0-20260519005816+0000",
+  "buildTime" : "20260519005816+0000",
+  "commitId" : "c147cbb005ba2b61dba32f51dc8c9ee70a38f24d",
   "current" : false,
   "snapshot" : true,
   "nightly" : true,
@@ -10,10 +10,10 @@
   "rcFor" : "",
   "milestoneFor" : "",
   "broken" : false,
-  "downloadUrl" : "https://services.gradle.org/distributions-snapshots/gradle-9.6.0-20260516003721+0000-bin.zip",
-  "checksumUrl" : "https://services.gradle.org/distributions-snapshots/gradle-9.6.0-20260516003721+0000-bin.zip.sha256",
-  "checksum" : "f6918e51d0595674cd892af6addd3449850b644561c1c9ccc44ca950485653ab",
-  "wrapperChecksumUrl" : "https://services.gradle.org/distributions-snapshots/gradle-9.6.0-20260516003721+0000-wrapper.jar.sha256",
+  "downloadUrl" : "https://services.gradle.org/distributions-snapshots/gradle-9.6.0-20260519005816+0000-bin.zip",
+  "checksumUrl" : "https://services.gradle.org/distributions-snapshots/gradle-9.6.0-20260519005816+0000-bin.zip.sha256",
+  "checksum" : "364592998ddcbe54d349545442b41e81730fcd1641bc03519af6c050bd2c17b6",
+  "wrapperChecksumUrl" : "https://services.gradle.org/distributions-snapshots/gradle-9.6.0-20260519005816+0000-wrapper.jar.sha256",
   "wrapperChecksum" : "497c8c2a7e5031f6aa847f88104aa80a93532ec32ee17bdb8d1d2f67a194a9c7"
 }, {
   "version" : "9.5.1",

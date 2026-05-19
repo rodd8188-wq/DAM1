@@ -1,9 +1,12 @@
 package Boletin28DanielEjercicio2;
 
 public interface Ladron {
-	public static boolean Sigilo(Personaje p) {		//Destreza(1)
+	
+	int[] getAtributo();
+	
+	public default boolean Sigilo() {		//Destreza(1)
 		int contador = 0;
-		for(int i = 0; i < p.atributo[1]; i++) {
+		for(int i = 0; i < this.getAtributo()[1]; i++) {
 			int dado = (int)(Math.random()*(6-1+1))+1;
 			if (dado == 6)
 				contador++;

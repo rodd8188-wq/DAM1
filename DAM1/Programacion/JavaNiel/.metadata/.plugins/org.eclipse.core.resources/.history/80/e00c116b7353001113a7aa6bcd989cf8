@@ -1,0 +1,8 @@
+package Boletin28DanielEjercicio2;
+
+public interface Guerrero {
+	public static int golpear(Personaje p) {	// Fuerza(0) + Destreza(1)
+		String nombre = this.nombre;
+		return (int)(Math.random()*((p.atributo[0] + p.atributo[1])-5+1))+5;
+	}
+}

@@ -3,6 +3,7 @@ package Boletin28DanielEjercicio2;
 abstract class Personaje {
 	// Atributos
 	protected int nivel = 1;
+	protected String nombre;
 	protected final static int 
 		fuerza = 0,
 		destreza = 1, 
@@ -12,7 +13,8 @@ abstract class Personaje {
 		carisma = 5;
 	protected int[] atributo = new int[6];
 	
-	public Personaje() {
+	public Personaje(String nombre) {
+		this.nombre = nombre;
 		generarAtributosAleatorios();
 	}
 	

@@ -1,0 +1,7 @@
+package Boletin28DanielEjercicio2;
+
+class Sombra extends Personaje implements Guerrero, Ladron{
+	public Sombra() {
+		
+	}
+}

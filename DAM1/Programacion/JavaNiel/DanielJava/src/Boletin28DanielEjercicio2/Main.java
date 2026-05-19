@@ -4,12 +4,12 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Paladin p1 = new Paladin();
-		Asesino a1 = new Asesino();
+		Paladin p1 = new Paladin("Paladin");
+		Asesino a1 = new Asesino("Asesino");
 		
-		System.out.println(Guerrero.golpear(p1));
+		System.out.println(p1.golpear());
 		
-		System.out.println(Ladron.Sigilo(a1));
+		System.out.println(a1.Sigilo());
 		
 	}
 
