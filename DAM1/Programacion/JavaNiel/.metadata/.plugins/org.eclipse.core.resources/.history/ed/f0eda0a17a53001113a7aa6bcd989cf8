@@ -33,8 +33,4 @@ abstract class Personaje {
 				"Magia: "+ this.atributo[magia] + "\n" +
 				"Carisma: "+ this.atributo[carisma]);
 	}
-	
-    public int[] getAtributo() {
-        return this.atributo;
-    }
 }

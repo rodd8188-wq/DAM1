@@ -5,4 +5,3 @@ INDEX VERSION 1.134+/home/alumno/GitNiel/DAM1/DAM1/Programacion/JavaNiel/.metada
 3092373479.index
 1808164556.index
 1865797976.index
-1093198552.index

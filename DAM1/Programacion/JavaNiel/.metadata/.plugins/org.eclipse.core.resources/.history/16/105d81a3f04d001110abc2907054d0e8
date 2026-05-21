@@ -1,5 +1,0 @@
-package Lambdas;
-
-public interface Operacion {
-	
-}

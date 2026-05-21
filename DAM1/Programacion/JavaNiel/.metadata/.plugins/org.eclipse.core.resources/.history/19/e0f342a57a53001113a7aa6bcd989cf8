@@ -34,6 +34,7 @@ abstract class Personaje {
 				"Carisma: "+ this.atributo[carisma]);
 	}
 	
+	@Override
     public int[] getAtributo() {
         return this.atributo;
     }

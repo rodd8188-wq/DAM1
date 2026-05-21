@@ -1,5 +1,0 @@
-package Lambdas;
-
-public interface OtraOperacion {
-	String ejecutar (double precio, double iva);
-}
