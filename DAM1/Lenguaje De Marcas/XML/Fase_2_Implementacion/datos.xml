@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concesionario SYSTEM "esquema.dtd">
+<?xml-stylesheet type="text/xsl" href="estilos.xsl"?>
+<concesionario>
+
+    <coche vin="VIN001ES2023AA" estado="nuevo" anio="2023">
+        <marca>Toyota</marca>
+        <modelo>Corolla Cross</modelo>
+        <motor combustible="hibrido" cilindrada="1800">Híbrido 1.8 140 cv</motor>
+        <precio>28990</precio>
+        <equipamiento>Pantalla táctil 8", control de crucero adaptativo, cámara trasera, Apple CarPlay</equipamiento>
+    </coche>
+
+    <coche vin="VIN002ES2021BB" estado="ocasion" anio="2021">
+        <marca>Volkswagen</marca>
+        <modelo>Golf</modelo>
+        <motor combustible="gasolina" cilindrada="1500">TSI 1.5 150 cv</motor>
+        <precio>21500</precio>
+        <equipamiento>Navegador GPS, sensores de aparcamiento, climatizador dual</equipamiento>
+    </coche>
+
+    <coche vin="VIN003ES2024CC" estado="nuevo" anio="2024">
+        <marca>Tesla</marca>
+        <modelo>Model 3</modelo>
+        <motor combustible="electrico">Motor eléctrico 358 cv</motor>
+        <precio>42990</precio>
+        <equipamiento>Autopilot, pantalla central 15.4", actualizaciones OTA, techo panorámico</equipamiento>
+    </coche>
+
+    <coche vin="VIN004ES2020DD" estado="ocasion" anio="2020">
+        <marca>Seat</marca>
+        <modelo>Ibiza</modelo>
+        <motor combustible="gasolina" cilindrada="1000">TSI 1.0 95 cv</motor>
+        <precio>13750</precio>
+    </coche>
+
+    <coche vin="VIN005ES2022EE" estado="ocasion" anio="2022">
+        <marca>BMW</marca>
+        <modelo>Serie 3</modelo>
+        <motor combustible="diesel" cilindrada="2000">2.0d 150 cv</motor>
+        <precio>34800</precio>
+        <equipamiento>Asientos de cuero, head-up display, faros LED adaptativos, parking asistido</equipamiento>
+    </coche>
+
+    <coche vin="VIN006ES2024FF" estado="nuevo" anio="2024">
+        <marca>Renault</marca>
+        <modelo>Megane E-Tech</modelo>
+        <motor combustible="electrico">Motor eléctrico 220 cv</motor>
+        <precio>37200</precio>
+        <equipamiento>Carga rápida 130 kW, OpenR Link con Google integrado, visión 360°</equipamiento>
+    </coche>
+
+    <coche vin="VIN007ES2019GG" estado="ocasion" anio="2019">
+        <marca>Ford</marca>
+        <modelo>Focus</modelo>
+        <motor combustible="diesel" cilindrada="1500">EcoBlue 1.5 120 cv</motor>
+        <precio>16200</precio>
+        <equipamiento>Sensores delanteros, control de crucero, pantalla sync 3</equipamiento>
+    </coche>
+
+</concesionario>
