@@ -1,71 +1,10 @@
-Habilita
-las
-notificaciones
-de
-escritorio
-para
-Gmail.Aceptar
-No, gracias
-4
-de
-1.285
-Apuntes
-Python
-20
-feb
-26
-Recibidos
-Dan
-Pop
-
-Archivos
-adjuntosvie, 20
-feb, 12: 24(hace
-4
-días)
-
-Dan
-Pop < rodd8188 @ gmail.com >
-
-Archivos
-adjuntosvie, 20
-feb, 12: 33(hace
-4
-días)
-
-
-para
-aarias10112 @ gmail.com, nickmaverick07072007
-
----------- Forwarded
-message - --------
-De: Dan
-Pop < rodd8188 @ gmail.com >
-Date: vie, 20
-feb
-2026
-a
-las
-12: 24
-Subject: Apuntes
-Python
-20
-feb
-26
-To: Dan
-Pop < rodd8188 @ gmail.com >
-
-Un
-archivo
-adjunto  •  Analizados
-por
-Gmail
-
-
 def SlicingStrings():
     b = "Hello, World"
     print(b[2:5])
-
+# Funcion que recibe infinitos argumentos
+def analizar_lecturas(*args):
+    for a in args:
+        print(a)
 
 def ModifyStrings():
     a = " Hello, World "
